@@ -1,0 +1,117 @@
+.app-header{
+    height:50px;
+    display:flex;
+    color:#fff;
+    background:#c62f2f;
+    /* justify-content:center; */
+    align-items:center;
+    width:100%;
+    .icon-cd_icon{
+        margin:0 5px 0 20px;
+        font-size:20px;
+        font-weight:700;
+    }
+    .app-name{
+        font-weight:700;
+    }
+    .seach-bar{
+        position:relative;
+        margin-left:100px;
+        input{
+            background:#a82828;
+            color:#fdf9f9;
+            border-radius:15px;
+            font-size:12px;
+            padding-right:25px;
+            padding-left:8px;
+            width:200px;
+            height:25px;
+        }
+        .icon-search{
+            position:absolute;
+            right:7px;
+            top:5px;
+            color:#ccc;
+            font-size:14px;
+
+        }
+        .search-wrap{
+            position: absolute;
+            z-index: 120;
+            left: 0;
+            top:30px;
+            box-sizing: border-box;
+            border: 1px solid #bebebe;
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: 0 4px 7px #555;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+            .item{
+                display: flex;
+                .iconfont{
+                    color:#999;
+                    font-size:14px;
+                    margin-right:3px;
+                }
+                .left{
+                    width:70px;
+                    border-right: 1px solid #e2e2e2;
+                    line-height: 17px;
+                    font-weight: normal;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
+                    color: #999;
+                   padding-top:10px;
+                    
+                    em{
+                        font-style:normal;
+                        font-size: 12px;
+                    }
+                }
+                .right{
+                    font-size: 12px;
+                    width:180px;
+                    border-top: 1px solid #e2e2e2;
+                    border-left: 1px solid #e2e2e2;
+                    padding: 6px 0 5px 0;
+                   
+                    a{
+                        display: inline-block;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        width:100%;
+                        line-height: 24px;
+                        text-indent:10px;
+                        padding-right:10px;
+                        cursor: pointer;
+                        &:hover{
+                            background: #e3e5e7;
+                            color:#0c73c2;
+                        }
+                    }
+                }
+            }
+}
+        }
+    .user-info{
+        margin-left:350px;
+        cursor: pointer;
+        .user-avatar{
+            width:30px;
+            height:30px;
+            border-radius: 50%;
+        }
+        .user-name{
+            display: inline-block;
+            width:120px;
+            font-size: 14px;
+            margin-left:10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 30px;
+        }
+    }
+}

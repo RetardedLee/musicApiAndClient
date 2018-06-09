@@ -15,6 +15,11 @@ export default{
             excusive:`${DOMAIN}/private/content`,
             newTest:`${DOMAIN}/private/new`,
             recMv:`${DOMAIN}/private/mv`
+        },
+        playList:{
+            tagList:`${DOMAIN}/playlist/list`,
+            hotTag:`${DOMAIN}/playlist/hot`,
+            allTag:`${DOMAIN}/playlist/cat`,
         }
         
     }

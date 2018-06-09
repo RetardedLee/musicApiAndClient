@@ -122,7 +122,9 @@ module.exports = {
     privateMv:"/weapi/personalized/mv",
 
     // 推荐新音乐
-    privateNew:"/weapi/personalized/newsong"
+    privateNew:"/weapi/personalized/newsong",
+    //获取分类下歌单列表
+    getPlayList:"/weapi/playlist/list"
 }
 
 /* 

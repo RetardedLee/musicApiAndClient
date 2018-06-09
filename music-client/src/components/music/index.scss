@@ -209,6 +209,73 @@ $list-margin:20px;
 		}
 		}
 	}
+	.newTest{
+	
+		@include flexBox($direction:column,$wrap:wrap);
+		height:302px;
+		border:1px solid #ededed;
+		.item{
+			width:(735px / 2);
+			height:60px;
+			cursor: pointer;
+			&:nth-child(even){
+				background: #f5f5f5;
+			}
+			&:nth-child(n+6){
+				border-left:1px solid #ededed;
+			}
+			&:hover{
+				background: #ebeced;
+
+			}
+			@include flexBox();
+			.rank{
+				text-align: center;
+				width:50px;
+				font-size: 12px;
+				color:#999;
+
+			}
+			
+			
+			.relative{
+				width:40px;
+				height:40px;
+				position: relative;
+				>img{
+					width:40px;
+				}
+				.iconfont{
+					position: absolute;
+					color:#fff;
+					font-size:20px;
+					left:10px;
+					top:10px;
+					background: rgba(0,0,0,.4);
+					&:hover{
+						background: rgba(0,0,0,.7);
+						transition:all .3s;
+					}
+					
+				}
+			}
+			.info{
+				@include flexer(5);
+				width:275px;
+				padding-left:8px;
+				.name{
+					line-height: 20px;
+				}
+				.artist{
+					color:#7d7d7d;
+				}
+				.name,.artist{
+					@include text-overflow-ellipsis(1);
+					font-family: monospace;
+				}
+			}
+		}
+	}
 }
 }
 @-webkit-keyframes swiper-preloader-adjust-hue {

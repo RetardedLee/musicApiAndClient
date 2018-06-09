@@ -14,6 +14,12 @@ export default {
             EXCLUSIVE:"EXCLUSIVE",
             NEWTEST:"NEWTEST",
             RECMV:"RECMV"
+        },
+        playList:{
+            TAGLIST:"TAGLIST",
+            HOTTAG:"HOTTAG",
+            ALLTAG:"ALLTAG"
+            
         }
     }
 }

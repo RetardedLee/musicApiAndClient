@@ -3,6 +3,6 @@ export default class Playlist extends React.Component{
 
     render(){
         console.log(this.props)
-        return <div>歌单</div>
+        return <div className="playlist">歌单</div>
     }
 }

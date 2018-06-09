@@ -19,12 +19,14 @@ import actions from 'action/music'
         super(props)
      }
      componentDidMount(){
+        //  组件加载完先发送第一个tab的action
          this.props.bannerAction()
          this.props.recListAction()
          this.props.recMvAction()
          this.props.excusiveAction()
          this.props.newTestAction()
      }
+     on
     render(){
         let {state,props}=this
         let recDom=<LoadingInfo status={1} component={<Recommend data={props.music}/>}/>
@@ -37,6 +39,7 @@ import actions from 'action/music'
                     defaultActiveKey="recommend"
                     renderTabBar={()=><ScrollableInkTabBar />}
                     renderTabContent={()=><TabContent />}
+                    onChange={(e)=>{console.log(e)}}
                     >
                     <TabPane tab={<div>个性推荐</div>} key="recommend">{recDom}</TabPane>
                     <TabPane tab={<div>歌单</div>} key="playlist">{listDom}</TabPane>

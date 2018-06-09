@@ -40,7 +40,18 @@ export default{
             }
         },
         playList:{
-
+            allTag:{
+                content:null,
+                status:0
+            },
+            hotTag:{
+                content:null,
+                status:0
+            },
+            tagList:{
+                content:null,
+                status:0
+            }
         },
         ranking:{
 

@@ -3,10 +3,17 @@ import {recListAction} from './recListAction'
 import {excusiveAction} from './excusiveAction'
 import {newTestAction} from './newTestAction'
 import {recMvAction} from './recMvAction'
+import {allTagAction} from './allTagAction'
+import {hotTagAction} from './hotTagAction'
+import {getListAction} from './getListAction'
 export default{
     bannerAction,
     recListAction,
     newTestAction,
     recMvAction,
-    excusiveAction
+    excusiveAction,
+    allTagAction,
+    hotTagAction,
+    getListAction
+
 }

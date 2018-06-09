@@ -4,10 +4,16 @@ import recList from './recListReducer'
 import recMv from './recMvReducer'
 import newTest from './newTestReducer'
 import excusive from './excusiveReducer'
+import allTag from './allTagReducer'
+import hotTag from './hotTagReducer'
+import tagList from './tagListReducer'
 export default combineReducers({
     banner,
     recList,
     recMv,
     newTest,
-    excusive
+    excusive,
+    allTag,
+    hotTag,
+    tagList
 })

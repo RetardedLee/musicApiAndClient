@@ -34,10 +34,11 @@ $base-border-color:#e1e1e2;
         
 }
 }
-@mixin flexBox($justify:center,$align:center,$wrap:nowrap){
+@mixin flexBox($justify:center,$align:center,$wrap:nowrap,$direction:row){
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-direction: $direction;
     -webkit-box-align: $align;
         -ms-flex-align: $align;
             align-items: $align;
@@ -47,7 +48,9 @@ $base-border-color:#e1e1e2;
     -ms-flex-wrap: $wrap;
         flex-wrap: $wrap;
 }
-
+@mixin flexer($number:1){
+    flex:$number;
+}
 @mixin titleWithline($fontSize:14px,$fontColor:#333,$borderColor:$base-border-color){
     font-weight: normal;
     font-style: normal;

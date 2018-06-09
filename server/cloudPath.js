@@ -113,8 +113,16 @@ module.exports = {
     //获取粉丝
     userFans: "/weapi/user/getfolloweds",
     // 精品歌单
-    playlistHq: "/weapi/playlist/highquality/list"
+    playlistHq: "/weapi/playlist/highquality/list",
+    //独家放送
+    privateCon:"/weapi/personalized/privatecontent",
+    // 推荐歌单
+    privateList:"/weapi/personalized/playlist",
+    // 推荐mv
+    privateMv:"/weapi/personalized/mv",
 
+    // 推荐新音乐
+    privateNew:"/weapi/personalized/newsong"
 }
 
 /* 
@@ -129,12 +137,6 @@ module.exports = {
     //推荐新音乐
     app.use("/personalized/newsong", require("./router/personalized_newsong"));
 
-    //独家放送
-    app.use(
-        "/personalized/privatecontent",
-        require("./router/personalized_privatecontent")
-    );
-
     //推荐mv
     app.use("/personalized/mv", require("./router/personalized_mv"));
 
@@ -144,11 +146,7 @@ module.exports = {
     app.use("/top/album", require("./router/top_album"));
 
 
-    //精品歌单
-    app.use(
-        "/top/playlist/highquality",
-        require("./router/top_playlist_highquality")
-    );
+    
     app.use("/user/subcount", require("./router/user_subcount"));
 
    

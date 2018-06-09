@@ -26,11 +26,27 @@ import actions from 'action/music'
          this.props.excusiveAction()
          this.props.newTestAction()
      }
-     on
+    tabChange=(e)=>{
+        let obj=this.props.music
+        if(e==="recommend"){
+         if(obj.banner.status !==1)this.props.bannerAction()
+         if(obj.recList.status !==1)this.props.recListAction()
+         if(obj.recMv.status !==1)this.props.recMvAction()
+         if(obj.excusive.status !==1)this.props.excusiveAction()
+         if(obj.newTest.status !== 1)this.props.newTestAction()
+        }else if(e==="playlist"){
+            if(obj.hotTag.status !==1)this.props.hotTagAction()
+            if(obj.tagList.status !==1)this.props.getListAction()
+        }
+    }
+    catChange=(e)=>{
+        this.props.getListAction(e)
+    }
     render(){
         let {state,props}=this
+        console.log(props)
         let recDom=<LoadingInfo status={1} component={<Recommend data={props.music}/>}/>
-        let listDom=<LoadingInfo status={1} component={<Playlist data={props.recList}/>}/>
+        let listDom=<LoadingInfo status={1} component={<Playlist data={props.music} catChange={this.catChange}/>}/>
         let rankDom=<LoadingInfo status={1} component={<Ranking />}/>
         let artDom=<LoadingInfo status={1} component={<Artist />}/>
         let newDom=<LoadingInfo status={1} component={<Newtest />}/>
@@ -39,7 +55,7 @@ import actions from 'action/music'
                     defaultActiveKey="recommend"
                     renderTabBar={()=><ScrollableInkTabBar />}
                     renderTabContent={()=><TabContent />}
-                    onChange={(e)=>{console.log(e)}}
+                    onChange={this.tabChange}
                     >
                     <TabPane tab={<div>个性推荐</div>} key="recommend">{recDom}</TabPane>
                     <TabPane tab={<div>歌单</div>} key="playlist">{listDom}</TabPane>

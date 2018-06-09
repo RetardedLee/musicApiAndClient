@@ -19,9 +19,11 @@ import actions from 'action/music'
         super(props)
      }
      componentDidMount(){
-         console.log(this.props)
          this.props.bannerAction()
          this.props.recListAction()
+         this.props.recMvAction()
+         this.props.excusiveAction()
+         this.props.newTestAction()
      }
     render(){
         let {state,props}=this

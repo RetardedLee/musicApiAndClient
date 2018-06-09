@@ -11,7 +11,10 @@ export default{
     music:{
         recommend:{
             banner:`${DOMAIN}/banner`,
-            recList:`${DOMAIN}/recommend/playlist`
+            recList:`${DOMAIN}/private/list`,
+            excusive:`${DOMAIN}/private/content`,
+            newTest:`${DOMAIN}/private/new`,
+            recMv:`${DOMAIN}/private/mv`
         }
         
     }

@@ -57,11 +57,23 @@ $base-border-color:#e1e1e2;
     padding-bottom:10px;
     padding-top:15px;
 }
-@mixin text-overflow-ellipsis{
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
+@mixin text-overflow-ellipsis($line:1){
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+            @if ($line==1){
+                white-space: nowrap;
+            }
+            @else{
+                display: -webkit-box;
+                /* autoprefixer: off */
+                    -webkit-box-orient: vertical;
+                 /* autoprefixer: on */
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: $line;
+                
+            }
+    }
  .block{
      display:block;
  }

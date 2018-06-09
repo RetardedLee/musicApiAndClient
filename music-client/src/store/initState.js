@@ -1,4 +1,5 @@
 import { createStore } from 'redux'
+// 大部分初始状态是相同的 ，但是为了后期可扩展，还是写出来
 export default{
     public:{
         searchSuggest:{
@@ -22,7 +23,19 @@ export default{
                 status:0
             },
             banner:{
-                content:[],
+                content:null,
+                status:0
+            },
+            newTest:{
+                content:null,
+                status:0
+            },
+            recMv:{
+                content:null,
+                status:0
+            },
+            excusive:{
+                content:null,
                 status:0
             }
         },

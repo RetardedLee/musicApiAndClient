@@ -10,7 +10,10 @@ export default {
     music:{
         recommend:{
             BANNER:"BANNER",
-            RECLIST:"RECLIST"
+            RECLIST:"RECLIST",
+            EXCLUSIVE:"EXCLUSIVE",
+            NEWTEST:"NEWTEST",
+            RECMV:"RECMV"
         }
     }
 }

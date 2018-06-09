@@ -2,12 +2,14 @@ $container-width:1000px;
 $container-height:650px;
 $bgColor:#c62f2f;
 $base-font-color:#ccc;
+$base-border-color:#e1e1e2;
 @mixin range($width){
     vertical-align: middle;
     width:$width;
     -webkit-appearance: none;
     border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
-    background-image: -webkit-linear-gradient($bgColor, $bgColor) ;
+    background-image: -webkit-linear-gradient($bgColor, $bgColor);
+    background-repeat:no-repeat;
     background-color:#ccc;
     background-size: 0% 100%;
     height:5px;
@@ -17,17 +19,52 @@ $base-font-color:#ccc;
     }
     &::-webkit-slider-thumb {
         -webkit-appearance: none;
-        height: 13px;
-        width: 13px;
-        margin-top: -1px; /*使滑块超出轨道部分的偏移量相等*/
+        height: 11px;
+        width: 11px; /*使滑块超出轨道部分的偏移量相等*/
+        /* margin-top:-1px; */
+        margin-right:-4px;
         background: #ffffff; 
         border-radius: 50%; /*外观设置为圆形*/
         border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
         &:hover{
-            box-shadow: 0 0 .125em #666; /*添加底部阴影*/
+            -webkit-box-shadow: 0 0 .125em #666;
+                    box-shadow: 0 0 .125em #666; /*添加底部阴影*/
     
         }
         
 }
 }
+@mixin flexBox($justify:center,$align:center,$wrap:nowrap){
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: $align;
+        -ms-flex-align: $align;
+            align-items: $align;
+    -webkit-box-pack:$justify;
+        -ms-flex-pack:$justify;
+            justify-content:$justify;
+    -ms-flex-wrap: $wrap;
+        flex-wrap: $wrap;
+}
 
+@mixin titleWithline($fontSize:14px,$fontColor:#333,$borderColor:$base-border-color){
+    font-weight: normal;
+    font-style: normal;
+    font-size:$fontSize;
+    color:$fontColor;
+    border-bottom:1px solid $borderColor;
+    padding-bottom:10px;
+    padding-top:15px;
+}
+@mixin text-overflow-ellipsis{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+ .block{
+     display:block;
+ }
+ .mb15{
+     margin-bottom:15px;
+ }

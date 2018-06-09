@@ -9,5 +9,7 @@
     .app-main{
         height: 550px;
         width:800px;
+        overflow-y:auto;
+        overflow-x:hidden;
     }
 }

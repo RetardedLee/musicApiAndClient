@@ -63,6 +63,7 @@
         height: 100%;
         display: flex;
         align-items: center;
+        border-top:1px solid $base-border-color;
         .control-play{
             width:180px;
             display: flex;
@@ -78,8 +79,6 @@
         }
         .time{
             width:500px;
-            
-            
             span{
                 display: inline-block;
                 
@@ -113,6 +112,7 @@
                 width:30px;
                 text-align: center;
                 color:#666;
+                cursor:pointer;
             }
         }
         .mode,.lyric,.list

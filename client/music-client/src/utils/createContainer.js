@@ -3,8 +3,7 @@ import {connect} from 'react-redux'
 
 export default function(component,key,actions){
     const mapStateToProps = (store) => {
-        console.log(store)
-        return store[key]?store[key]:store
+        return {[key]:store[key]}
     }
     const mapDispatchToProps=(dispatch)=>{
         return {...bindActionCreators(actions,dispatch)}

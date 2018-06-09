@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import './menu.scss'
-const activeStyle={borderLeft:"3px solid #c62f2f",background:"#e6e7ea"}
+const activeStyle={borderLeft:"3px solid #c62f2f",background:"#e6e7ea",color:"#333"}
 export default class Menu extends React.Component{
     constructor(props){
         super(props)

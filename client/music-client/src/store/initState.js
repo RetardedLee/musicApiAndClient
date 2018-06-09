@@ -17,7 +17,14 @@ export default{
     },
     music:{
         recommend:{
-
+            recList:{
+                content:null,
+                status:0
+            },
+            banner:{
+                content:[],
+                status:0
+            }
         },
         playList:{
 
@@ -30,7 +37,8 @@ export default{
         },
         newest:{
 
-        }
+        },
+        
     },
     vedio:{
         vedio:{

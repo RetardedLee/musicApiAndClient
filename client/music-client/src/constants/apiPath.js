@@ -5,7 +5,14 @@ export default{
         search:`${DOMAIN}/search`,
         loginEmail:`${DOMAIN}/loginEmail`,
         loginMobi:`${DOMAIN}/loginMobi`,
-        banner:`${DOMAIN}/banner`,
-        playlist:`${DOMAIN}/user/playlist`
+        playlist:`${DOMAIN}/user/playlist`,
+        userInfo:`${DOMAIN}/banner`
+    },
+    music:{
+        recommend:{
+            banner:`${DOMAIN}/banner`,
+            recList:`${DOMAIN}/recommend/playlist`
+        }
+        
     }
 }

@@ -5,7 +5,12 @@ export default {
         LOGINMOBI:"LOGINMOBI",
         LOGINEMAIL:"LOGINEMAIL",
         USERINFO:"USERINFO",
-        BANNER:"BANNER",
         PLAYLIST:"PLAYLIST"
+    },
+    music:{
+        recommend:{
+            BANNER:"BANNER",
+            RECLIST:"RECLIST"
+        }
     }
 }

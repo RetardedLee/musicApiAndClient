@@ -16,9 +16,7 @@ function checkStatus(type,dispatch,response) {
       throw error
     }
   }
-   
   function parseJSON(response) {
-
     return response.json()
   }
 /* 状态码
@@ -41,7 +39,6 @@ const  fetchData = (type, url, data, field /* 判断是否为空值的字段 */ 
             method: "GET",
             cache:"no-cache",
             mode:"cors"
-
         }).then(response => checkStatus(type,dispatch,response)).then(parseJSON)
           .then( body => {
             if (body.code == 200 && body[field] != null && !isEmptyObject(body[field])) {

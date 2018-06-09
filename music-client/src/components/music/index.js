@@ -36,7 +36,7 @@ import actions from 'action/music'
          if(obj.newTest.status !== 1)this.props.newTestAction()
         }else if(e==="playlist"){
             if(obj.hotTag.status !==1)this.props.hotTagAction()
-            if(obj.tagList.status !==1)this.props.getListAction()
+            this.props.getListAction()
         }
     }
     catChange=(e)=>{
@@ -56,6 +56,7 @@ import actions from 'action/music'
                     renderTabBar={()=><ScrollableInkTabBar />}
                     renderTabContent={()=><TabContent />}
                     onChange={this.tabChange}
+                    destroyInactiveTabPane={true}
                     >
                     <TabPane tab={<div>个性推荐</div>} key="recommend">{recDom}</TabPane>
                     <TabPane tab={<div>歌单</div>} key="playlist">{listDom}</TabPane>

@@ -322,6 +322,8 @@ $list-margin:20px;
 	.offical{
 		@include flexBox($justify:flex-start,$wrap:wrap);
 		.rank-tag{
+			cursor: pointer;
+			border:1px solid #ededed;
 			width:((735px-30px) / 3);
 			margin-right:15px;
 			&:nth-child(3n),&:last-child{
@@ -335,31 +337,124 @@ $list-margin:20px;
 				&::first-letter{
 					letter-spacing: 4px;
 					font-size:40px;
-					font-style: italic;
+					font-style: oblique;
 					
 
 				}
 				color:#fff;
 				position: relative;
 				span{
-					&:first-child{
+
+					&.title{
 						text-shadow: 0 0 4px #fff;
 						text-shadow: 0px 1px 0px #e5e5ee;
 						font-style: italic;
+						font-weight: bold;
+						color:#fff;
+						text-decoration: none;
+						border: none;
+						
 					}
 					font-size: 20px;
 					letter-spacing: 4px;
 					font-family: sans-serif;
-					&:last-child{
+					&.updatetime{
 						position: absolute;
-						color:rgba(164,195,241,.7);
+						color:#ebeced;
 						font-size: 12px;
 						letter-spacing: 0;
 						left: 71px;
 						top: 25px;
 						font-family: monospace;
 					}
+
 				}
+				.icon-bofang1{
+					position: absolute;
+					font-size: 30px;
+					right:30px;
+					bottom:23px;
+					color:#ebeced;
+					background: rgba(20, 20, 20, 0.3);
+					border-radius: 50%;
+					cursor: pointer;
+					&:hover{
+						transition: all .3s;
+						color:#fff;
+						background: rgba(12, 12, 12, 0.6);
+
+					}
+				}
+			}
+			.link{
+				background: #f5f5f7;
+				line-height: 40px;
+				text-align: right;
+				color:#7d7d7d;
+				font-size: 13px;
+				padding-right:15px;
+				.iconfont{
+					font-size: 12px;
+					vertical-align: baseline;
+				}
+			}
+			.rank-item{
+				
+				i,span{
+					display: inline-block;
+					font-size: 12px;
+					font-family: monospace;
+				}
+				cursor: pointer;
+				
+				&:nth-child(even){
+					background: #f1f1f1;
+				}
+				&:hover{
+					background: #ebeced;
+				}
+				line-height: 1.4;
+				@include flexBox($justify:space-between,$wrap:nowrap);
+				.rk{
+					width:20px;
+					padding-right:5px;
+					font-size: 14px;
+
+				}
+				.percent{
+					width:30px;
+					color:#999;
+					line-height: 25px;
+				}
+				.name{
+					width:125px;
+					@include text-overflow-ellipsis(1);
+				}
+				.artist{
+					width:50px;
+					@include text-overflow-ellipsis(1);
+					color:#666;
+				}
+				padding:0 5px;
+				&:nth-child(2),&:nth-child(3),&:nth-child(4){
+					.rk{
+						color:#cd297e;
+					}
+					
+				}
+				.icon-new{
+					color:rgb(8,156,25);
+					font-size: 18px;
+				}
+				.icon-up3{
+					color:rgb(205,41,41);
+					font-size: 18px;
+				}
+				.icon-down-copy{
+					color:#2875ce;
+					font-size: 18px;
+				}
+				
 			}
 		}
 	}

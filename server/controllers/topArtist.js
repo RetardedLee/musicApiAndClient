@@ -7,7 +7,7 @@ function topArtist(req, res, next) {
         offset: req.query.offset || 0,
         total: true,
         limit: req.query.limit || 50,
-        initial=req.query.limit || -1
+        initial:req.query.initial || -1
     }
     sendRequest(cloudPath.topArtist, data, req, res)
 }

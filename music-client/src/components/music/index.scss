@@ -459,6 +459,21 @@ $list-margin:20px;
 		}
 	}
 }
+.artist{
+	.artist-tag{
+		.title{
+			font-size: 12px;
+			font-family: monospace;
+			border: none;
+		}
+		.line-tag{
+			margin:10px 0;
+		}
+		.ant-radio-button-wrapper{
+			font-size: 12px;
+		}
+	}
+}
 }
 @-webkit-keyframes swiper-preloader-adjust-hue {
 	100% {

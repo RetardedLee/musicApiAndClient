@@ -7,6 +7,7 @@ import excusive from './excusiveReducer'
 import allTag from './allTagReducer'
 import hotTag from './hotTagReducer'
 import tagList from './tagListReducer'
+import ranking from './rankingReducer'
 export default combineReducers({
     banner,
     recList,
@@ -15,5 +16,6 @@ export default combineReducers({
     excusive,
     allTag,
     hotTag,
-    tagList
+    tagList,
+    ranking
 })

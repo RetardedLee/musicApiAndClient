@@ -26,7 +26,7 @@ export default class Playlist extends React.Component{
             list=props.data.tagList.content.map((v,k)=>{
                 return <li className="rec-item" key={v.id}>
                 <Link to={`/playlist/${v.id}`} className="block">
-                    <p className="relative"><img src={v.coverImgUrl}/>
+                    <p className="relative"><img src={`${v.coverImgUrl}?param=130y130`} alt={v.name}/>
                     <span className="listens"><i className="iconfont icon-1"></i>{formatNumber(v.playCount)}</span>
                     <span className="creator" title={v.creator.nickname}><i className="iconfont icon-ren"></i>{v.creator.nickname}</span>
                     <span className="play"><i className="iconfont icon-bofang1"></i></span>

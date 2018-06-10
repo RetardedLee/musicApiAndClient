@@ -10,7 +10,7 @@ export default class RecMv extends React.Component{
                         {props.data.content.map((v,k)=>{
                             return <li className="rec-item" key={v.id}>
                                         <Link to={`/mv/${v.id}`} className="block">
-                                            <p className="relative"><img src={v.picUrl}/>
+                                            <p className="relative"><img src={`${v.picUrl}?param=170y130`} alt={v.name}/>
                                             <span className="listens"><i className="iconfont icon-shipin1"></i>{formatNumber(v.playCount)}</span>
                                             <span className="reason">{v.copywriter}</span>
                                             </p>

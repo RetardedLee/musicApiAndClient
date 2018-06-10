@@ -8,7 +8,7 @@ export default class Newtest extends React.Component{
                         {props.data.content.map((v,k)=><li key={v.id} className="item">
                             <p className="rank">{k+1}</p>
                             <div className="relative">
-                                <img src={v.song.album.blurPicUrl} className="block"/>
+                                <img src={`${v.song.album.blurPicUrl}?param=40y40`} className="block"/>
                                 <i className="iconfont icon-bofang1"></i>
                             </div>
                             <div className="info">

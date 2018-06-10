@@ -315,6 +315,55 @@ $list-margin:20px;
 		
 }
 }
+.ranking{
+	.rec-list{
+		@include flexBox($justify:flex-start,$wrap:wrap);
+	}
+	.offical{
+		@include flexBox($justify:flex-start,$wrap:wrap);
+		.rank-tag{
+			width:((735px-30px) / 3);
+			margin-right:15px;
+			&:nth-child(3n),&:last-child{
+				margin-right:0;
+			}
+			&:nth-child(4n){
+				margin-top:15px;
+			}
+			.head{
+				padding:20px;
+				&::first-letter{
+					letter-spacing: 4px;
+					font-size:40px;
+					font-style: italic;
+					
+
+				}
+				color:#fff;
+				position: relative;
+				span{
+					&:first-child{
+						text-shadow: 0 0 4px #fff;
+						text-shadow: 0px 1px 0px #e5e5ee;
+						font-style: italic;
+					}
+					font-size: 20px;
+					letter-spacing: 4px;
+					font-family: sans-serif;
+					&:last-child{
+						position: absolute;
+						color:rgba(164,195,241,.7);
+						font-size: 12px;
+						letter-spacing: 0;
+						left: 71px;
+						top: 25px;
+						font-family: monospace;
+					}
+				}
+			}
+		}
+	}
+}
 }
 @-webkit-keyframes swiper-preloader-adjust-hue {
 	100% {

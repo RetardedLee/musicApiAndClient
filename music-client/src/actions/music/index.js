@@ -6,6 +6,7 @@ import {recMvAction} from './recMvAction'
 import {allTagAction} from './allTagAction'
 import {hotTagAction} from './hotTagAction'
 import {getListAction} from './getListAction'
+import * as rankingAction from './rankAction'
 export default{
     bannerAction,
     recListAction,
@@ -14,6 +15,7 @@ export default{
     excusiveAction,
     allTagAction,
     hotTagAction,
-    getListAction
+    getListAction,
+    ...rankingAction
 
 }

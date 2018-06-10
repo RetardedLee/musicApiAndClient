@@ -9,7 +9,7 @@ export default class Exclusive extends React.Component{
                 {content.map((v,i)=>(
                     <Link to={`/mv/${v.url}`} className="block link"  key={v.id}>
                     <figure className="item">
-                        <img src={v.sPicUrl} alt={v.name}/>
+                        <img src={`${v.sPicUrl}?param=230y130`} alt={v.name}/>
                         <figcaption title={v.name}>{v.name}</figcaption>
                     </figure>
                     </Link>

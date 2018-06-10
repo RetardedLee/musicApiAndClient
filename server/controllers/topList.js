@@ -32,7 +32,7 @@ function topList(req, res, next) {
     const id = TOPLIST[idx][1];
     const data = {
         id,
-        n: 10000
+        n: 10
     };
     sendRequest(cloudPath.topList, data, req, res)
 }

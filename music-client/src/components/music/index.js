@@ -37,6 +37,19 @@ import actions from 'action/music'
         }else if(e==="playlist"){
             if(obj.hotTag.status !==1)this.props.hotTagAction()
             this.props.getListAction()
+        }else if(e==="ranking"){
+            if(obj.ranking.rankSugre.status !==1){
+                this.props.rankSurgeAction()
+            }
+            if(obj.ranking.rankNew.status !==1){
+                this.props.rankNewAction()
+            }
+            if(obj.ranking.rankHot.status !==1){
+                this.props.rankHotAction()
+            }
+            if(obj.ranking.rankOriginal.status !==1){
+                this.props.rankOriginalAction()
+            }
         }
     }
     catChange=(e)=>{
@@ -47,7 +60,7 @@ import actions from 'action/music'
         console.log(props)
         let recDom=<LoadingInfo status={1} component={<Recommend data={props.music}/>}/>
         let listDom=<LoadingInfo status={1} component={<Playlist data={props.music} catChange={this.catChange}/>}/>
-        let rankDom=<LoadingInfo status={1} component={<Ranking />}/>
+        let rankDom=<LoadingInfo status={1} component={<Ranking data={props.music.ranking}/>}/>
         let artDom=<LoadingInfo status={1} component={<Artist />}/>
         let newDom=<LoadingInfo status={1} component={<Newtest />}/>
         return <div className="music contentPd">

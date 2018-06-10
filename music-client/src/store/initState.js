@@ -51,10 +51,26 @@ export default{
             tagList:{
                 content:null,
                 status:0
-            }
+            },
+           
         },
         ranking:{
-
+            rankSugre:{
+                content:null,
+                status:0
+            },
+            rankNew:{
+                content:null,
+                status:0
+            },
+            rankOriginal:{
+                content:null,
+                status:0
+            },
+            rankHot:{
+                content:null,
+                status:0
+            }
         },
         artist:{
 

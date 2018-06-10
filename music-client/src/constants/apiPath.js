@@ -20,6 +20,10 @@ export default{
             tagList:`${DOMAIN}/playlist/list`,
             hotTag:`${DOMAIN}/playlist/hot`,
             allTag:`${DOMAIN}/playlist/cat`,
+            
+        },
+        ranking:{
+            topList:`${DOMAIN}/top/list`
         }
         
     }

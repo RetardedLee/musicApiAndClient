@@ -9,8 +9,9 @@ import './App.scss';
 class App extends Component {
     componentDidMount(){
         this.props.userInfoAction().then((response)=>{
-            if(response.payload.status===1 && response.payload.content != null){
-                let uid=response.payload.content.userId
+            console.log(response)
+            if(response.code===200 && response.userInfo != null){
+                 let uid=response.payload.content.userId
                 this.props.playListAction(uid)
             }
         })

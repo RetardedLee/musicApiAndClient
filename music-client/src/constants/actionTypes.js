@@ -18,8 +18,13 @@ export default {
         playList:{
             TAGLIST:"TAGLIST",
             HOTTAG:"HOTTAG",
-            ALLTAG:"ALLTAG"
-            
+            ALLTAG:"ALLTAG",            
+        },
+        ranking:{
+            RANKING_SUGRE:"RANKING_SURGE",
+            RANKING_NEW:"RANKING_NEW",
+            RANKING_ORIGINAL:"RANKING_ORIGINAL",
+            RANKING_HOT:"RANKING_HOT"
         }
     }
 }

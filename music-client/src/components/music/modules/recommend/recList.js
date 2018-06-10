@@ -14,7 +14,7 @@ class RecItem extends React.Component{
         let {state,props}=this
         return (props.type==1?<li className="rec-item">
             <Link to={`/playlist/${props.data.id}`} className="block">
-                <p className="relative"><img src={props.data.picUrl}/>
+                <p className="relative"><img src={`${props.data.picUrl}?param=130y130`}/>
                 <span className="listens"><i className="iconfont icon-1"></i>{formatNumber(props.data.playCount)}</span>
                 <span className="reason">{props.data.copywriter}</span>
                 <span className="play"><i className="iconfont icon-bofang1"></i></span>

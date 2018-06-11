@@ -1,12 +1,15 @@
 import React from 'react'
 import ArtistTag from './artistTag'
+import ArtistList from './artistList'
+import LoadingInfo from 'component/common/LoadingInfo'
+import Pagination from 'rc-pagination'
 export default class Artist extends React.Component{
     constructor(props){
         super(props)
         this.state={
-            tag:0,
-            language:0,
-            filter:1
+            tag:1,
+            language:100,
+            filter:-1
         }
     }
     onChage=(a,b)=>{
@@ -16,23 +19,21 @@ export default class Artist extends React.Component{
             let {state}=this
             let tag=`${state.language}${state.tag}`
             let initial=`${state.filter}`
-            let ops={}
-            if(tag==="00"){
-                //调用热门歌手接口
-                ops={}
-            }else{
-                // 调用分类歌手
-                ops={
-                    tag:tag,
-                    initial:initial
+                let ops={
+                    cat:tag,
+                    initial:initial,
+                    limit:99
                 }
-            }
-            console.log(ops)
+                this.props.getArtistList(ops)
         })
     }
     render(){
-        return <div className="artist">
+        let {props}=this
+        return <div className="artist" onScroll={(e)=>{console.log(e)}}>
             <ArtistTag onChange={this.onChage}/>
+            <LoadingInfo 
+                status={props.data.artistTop.status} 
+                component={<ArtistList data={props.data.artistTop.content}/>} />
         </div>
     }
 }

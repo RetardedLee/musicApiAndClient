@@ -4,10 +4,6 @@ export default[
         dataKey:"language",
         list:[
             {
-                title:"全部",
-                id:0
-            },
-            {
                 title:"华语",
                 id:100,
             },
@@ -32,10 +28,6 @@ export default[
         dataKey:"tag",
         list:[
             {
-                title:"全部",
-                id:0,
-
-            },{
                 title:"男歌手",
                 id:1,
 
@@ -56,7 +48,7 @@ export default[
         list:[
             {
                 title:"热门",
-                id:1,
+                id:-1,
 
             }, {
                 title:"A",

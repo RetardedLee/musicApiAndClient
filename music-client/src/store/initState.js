@@ -73,10 +73,16 @@ export default{
             }
         },
         artist:{
-
+            artistTop:{
+                content:null,
+                status:0
+            }
         },
-        newest:{
-
+        newTest:{
+            newAlbum:{
+                content:null,
+                status:0
+            }
         },
         
     },

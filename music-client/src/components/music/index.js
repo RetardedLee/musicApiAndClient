@@ -25,6 +25,7 @@ import actions from 'action/music'
          this.props.recMvAction()
          this.props.excusiveAction()
          this.props.newTestAction()
+        
      }
     tabChange=(e)=>{
         let obj=this.props.music
@@ -36,7 +37,7 @@ import actions from 'action/music'
          if(obj.newTest.status !== 1)this.props.newTestAction()
         }else if(e==="playlist"){
             if(obj.hotTag.status !==1)this.props.hotTagAction()
-            this.props.getListAction()
+            this.props.getListAction({limit:10})
         }else if(e==="ranking"){
             if(obj.ranking.rankSugre.status !==1){
                 this.props.rankSurgeAction()
@@ -50,19 +51,29 @@ import actions from 'action/music'
             if(obj.ranking.rankOriginal.status !==1){
                 this.props.rankOriginalAction()
             }
+        }else if(e==="artist"){
+                this.props.artistTopAction({cat:1001,initial:-1,limit:99})
+        }else{
+                this.props.newAlbumAction({area:"ALL",limit:10})
         }
     }
     catChange=(e)=>{
         this.props.getListAction(e)
     }
+    getArtistList=(e)=>{
+        console.log(e)
+        this.props.artistTopAction(e)
+    }
+    newAlbumChange=(e)=>{
+        this.props.newAlbumAction(e)
+    }
     render(){
         let {state,props}=this
-        console.log(props)
         let recDom=<LoadingInfo status={1} component={<Recommend data={props.music}/>}/>
         let listDom=<LoadingInfo status={1} component={<Playlist data={props.music} catChange={this.catChange}/>}/>
         let rankDom=<LoadingInfo status={1} component={<Ranking data={props.music.ranking}/>}/>
-        let artDom=<LoadingInfo status={1} component={<Artist />}/>
-        let newDom=<LoadingInfo status={1} component={<Newtest />}/>
+        let artDom=<LoadingInfo status={1} component={<Artist getArtistList={this.getArtistList} data={props.music.artist}/>}/>
+        let newDom=<LoadingInfo status={1} component={<Newtest data={props.music.newAlbum} newAlbumChange={this.newAlbumChange}/>}/>
         return <div className="music contentPd">
                 <Tabs
                     defaultActiveKey="recommend"

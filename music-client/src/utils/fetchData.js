@@ -29,7 +29,7 @@ function parseJSON(response) {
 1 正常获取到数据
 0 正在请求数据
 -5 获取数据出错 */
-const fetchData = (type, url, data, field /* 判断是否为空值的字段 */ ) => {
+const fetchData = (type, url, data, field /* 判断是否为空值的字段 */ ,sign) => {
     var querystringify = qs.stringify(data, true)
     if (type) {
         return dispatch => {
@@ -48,13 +48,25 @@ const fetchData = (type, url, data, field /* 判断是否为空值的字段 */ )
                 }).then(response => checkStatus(type, dispatch, response)).then(parseJSON)
                 .then(body => {
                     if (body.code == 200 && body[field] != null && !isEmptyObject(body[field])) {
-                        dispatch({
-                            payload: {
-                                content: body[field],
-                                status: 1
-                            },
-                            type
-                        })
+                        if(!sign){
+                            dispatch({
+                                payload: {
+                                    content: body[field],
+                                    status: 1
+                                },
+                                type
+                            })
+                        }else{
+                            dispatch({
+                                payload: {
+                                    total:body.total,
+                                    content: body[field],
+                                    status: 1
+                                },
+                                type
+                            })
+                        }
+                        
                     } else {
                          dispatch({
                             payload: {

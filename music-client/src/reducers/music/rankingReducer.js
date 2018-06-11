@@ -1,7 +1,6 @@
 import types from 'constants/actionTypes'
 import initState from 'store/initState';
 import {combineReducers} from 'redux'
-console.log()
 const rankSugre=(init=initState.music.ranking.rankSugre,action)=>{
     console.log(action)
     if(action.type==types.music.ranking.RANKING_SUGRE){

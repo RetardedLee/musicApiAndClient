@@ -25,6 +25,12 @@ export default {
             RANKING_NEW:"RANKING_NEW",
             RANKING_ORIGINAL:"RANKING_ORIGINAL",
             RANKING_HOT:"RANKING_HOT"
+        },
+        artist:{
+            ARTIST_TOP:"ARTIST_TOP"
+        },
+        newTest:{
+            NEW_ALBUM:"NEW_ALBUM"
         }
     }
 }

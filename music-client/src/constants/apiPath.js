@@ -23,7 +23,13 @@ export default{
             
         },
         ranking:{
-            topList:`${DOMAIN}/top/list`
+            topList:`${DOMAIN}/top/list`,
+            
+        },artist:{
+            artistList:`${DOMAIN}/artist/list`
+        },
+        newTest:{
+            newAlbum:`${DOMAIN}/new/album`
         }
         
     }

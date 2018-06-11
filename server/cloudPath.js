@@ -124,7 +124,9 @@ module.exports = {
     // 推荐新音乐
     privateNew:"/weapi/personalized/newsong",
     //获取分类下歌单列表
-    getPlayList:"/weapi/playlist/list"
+    getPlayList:"/weapi/playlist/list",
+    // 新碟上架
+    newAlbum:"/weapi/album/new"
 }
 
 /* 

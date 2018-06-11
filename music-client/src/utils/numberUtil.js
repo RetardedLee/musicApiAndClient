@@ -11,7 +11,7 @@ export function formatNumber(str, n, unit) {
             } else if (str >= 1000) {
                 str = Math.round(str);
             } else {
-                str = parseInt(str, n);
+                str = parseInt(str, 10);
             }
         return _ext + str;
     }

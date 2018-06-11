@@ -16,6 +16,15 @@ let routes=[
             {
                 path:"/friend",
                 component:Friend/* lazyLoader(()=>import("./friend")) */
+            },
+            {
+                path:"/playlist",
+                exact:true,
+                component:Friend/* lazyLoader(()=>import("./friend")) */
+            },{
+                path:"/playlist/:id",
+                exact:true,
+                component:Friend/* lazyLoader(()=>import("./friend")) */
             }
         ]
     }

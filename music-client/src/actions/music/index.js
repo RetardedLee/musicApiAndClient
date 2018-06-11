@@ -7,6 +7,8 @@ import {allTagAction} from './allTagAction'
 import {hotTagAction} from './hotTagAction'
 import {getListAction} from './getListAction'
 import * as rankingAction from './rankAction'
+import * as artistAction from './artistAction'
+import * as newAlbumAction from './newAlbumAction'
 export default{
     bannerAction,
     recListAction,
@@ -16,6 +18,8 @@ export default{
     allTagAction,
     hotTagAction,
     getListAction,
-    ...rankingAction
+    ...rankingAction,
+    ...artistAction,
+    ...newAlbumAction
 
 }

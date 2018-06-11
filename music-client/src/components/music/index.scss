@@ -279,9 +279,11 @@ $list-margin:20px;
 	}
 }
 .playlist{
-	.rec-list{
-		@include flexBox($wrap:wrap);
+	overflow: hidden;
+	.artist-list{
+		@include flexBox($justify:flex-start,$wrap:wrap);
 		.rec-item{
+			
 			.listens{
 				transform:none;
 			}
@@ -472,6 +474,38 @@ $list-margin:20px;
 		.ant-radio-button-wrapper{
 			font-size: 12px;
 		}
+	}
+	.rec-list{
+		@include flexBox($justify:flex-start,$wrap:wrap);
+	}
+}
+.new-test{
+	overflow: hidden;
+	.ant-radio-group{
+		margin-left:120px;
+	}
+	.album-list{
+		img{width:110px;height:110px;}
+		.relative{
+			background: url("../../resource/coverall.png") no-repeat center right;
+		}
+		@include flexBox($justify:flex-start,$wrap:wrap);
+	}
+	.rc-pagination-item-active{
+		background-color:$bgColor;
+		border-color:$bgColor;
+	}
+	.rc-pagination-item:hover{
+		border-color:$bgColor;
+	}
+	.rc-pagination-item:hover a{
+		color:$bgColor;
+	}
+	.rc-pagination-item-active:hover a{
+		color:#fff;
+	}
+	.rc-pagination {
+		text-align: right;
 	}
 }
 }

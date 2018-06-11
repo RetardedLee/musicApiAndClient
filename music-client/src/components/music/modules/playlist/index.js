@@ -2,16 +2,41 @@ import React from 'react'
 import {Link } from 'react-router-dom'
 import {formatNumber} from 'utils/numberUtil'
 import Radio from 'component/common/radio'
-import LoadingInfo from 'component/common/LoadingInfo' 
+import LoadingInfo from 'component/common/LoadingInfo'
+import Pagination from 'rc-pagination' 
 const Group=Radio.Group
 const Button=Radio.Button
 export default class Playlist extends React.Component{
+    constructor(props){
+        super(props)
+            this.state={
+                current:1,
+                cat:"1001"
+            }
+        
+    }
     onChange=(e)=>{
         let cat=e.target.value
-        if(this.props.catChange){
-            this.props.catChange({cat})
-        }
+        this.setState({
+            cat,
+            current:1
+        },(e)=>{
+            if(this.props.catChange){
+                this.props.catChange({cat,offset:0,limit:10})
+            }
+        })
+        
       
+    }
+    onPageChange=(e)=>{
+        let {state}=this
+        this.setState({
+            current:e
+        },()=>{
+            if(this.props.catChange){
+                this.props.catChange({cat:state.cat,offset:(e-1)*10,limit:10})
+            }
+        })
     }
     render(){
         let {state,props}=this
@@ -23,7 +48,7 @@ export default class Playlist extends React.Component{
             })
         }
         if(props.data.tagList.status==1){
-            list=props.data.tagList.content.map((v,k)=>{
+            list=<div><ul className="artist-list rec-list">{props.data.tagList.content.map((v,k)=>{
                 return <li className="rec-item" key={v.id}>
                 <Link to={`/playlist/${v.id}`} className="block">
                     <p className="relative"><img src={`${v.coverImgUrl}?param=130y130`} alt={v.name}/>
@@ -34,16 +59,18 @@ export default class Playlist extends React.Component{
                     <p className="desc" title={v.name}>{v.name}</p>
                 </Link>
             </li>
-            })
+            
+            })}</ul>
+            <Pagination total={props.data.tagList.total} current={state.current} onChange={this.onPageChange}/>
+            </div>
         }
         return <div className="playlist">
             <Group onChange={this.onChange} defaultValue="全部" style={{padding:"15px 0"}}>
                 <Button key={"all"} value={"全部"}>全部</Button>
                 {tags}   
             </Group>
-            <ul className="rec-list">
+            
             <LoadingInfo status={props.data.tagList.status} component={list}></LoadingInfo>
-            </ul>
         </div>
     }
 }

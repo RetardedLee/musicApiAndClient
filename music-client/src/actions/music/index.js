@@ -9,6 +9,9 @@ import {getListAction} from './getListAction'
 import * as rankingAction from './rankAction'
 import * as artistAction from './artistAction'
 import * as newAlbumAction from './newAlbumAction'
+import {musicInfoAction} from '../publicAction/musicInfoAction'
+import {musicUrlAction} from '../publicAction/musicUrlAction'
+import {musicLyricAction} from '../publicAction/musicLyricAction'
 export default{
     bannerAction,
     recListAction,
@@ -20,6 +23,9 @@ export default{
     getListAction,
     ...rankingAction,
     ...artistAction,
-    ...newAlbumAction
+    ...newAlbumAction,
+    musicInfoAction,
+    musicLyricAction,
+    musicUrlAction
 
 }

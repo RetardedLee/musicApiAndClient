@@ -19,13 +19,13 @@ let routes=[
             },
             {
                 path:"/playlist",
-                exact:true,
-                component:Friend/* lazyLoader(()=>import("./friend")) */
-            },{
-                path:"/playlist/:id",
-                exact:true,
-                component:Friend/* lazyLoader(()=>import("./friend")) */
-            }
+                component:Friend,
+                routes:[{
+                    path:"/playlist/:id",
+                    exact:true,
+                    component:Friend/* lazyLoader(()=>import("./friend")) */
+                }]
+            },
         ]
     }
 ]

@@ -10,6 +10,7 @@ import tagList from './tagListReducer'
 import ranking from './rankingReducer'
 import artist from './artistReducer'
 import newAlbum from './newAlbumReducer'
+import musicInfo from '../publicReducer/musicInfoReducer'
 export default combineReducers({
     banner,
     recList,
@@ -21,5 +22,6 @@ export default combineReducers({
     tagList,
     ranking,
     artist,
-    newAlbum
+    newAlbum,
+   musicInfo
 })

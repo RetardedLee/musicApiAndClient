@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react';
 import {renderRoutes} from 'react-router-config'
-import {withRouter} from 'react-router-dom'
 import Header from './modules/header/header'
 import Menu from './modules/menu/menu'
 import Player from './modules/player/player';
@@ -32,7 +31,7 @@ class App extends Component {
                     <div className="app-main">
                         {renderRoutes(props.route.routes)}
                     </div>
-                    <Player />
+                    <Player musicUrl={props.public.musicUrl} musicInfo={props.public.musicInfo} musicLyric={props.public.musicLyric}/>
                 </div>
             );
     }

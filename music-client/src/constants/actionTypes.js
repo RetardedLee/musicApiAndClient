@@ -5,7 +5,10 @@ export default {
         LOGINMOBI:"LOGINMOBI",
         LOGINEMAIL:"LOGINEMAIL",
         USERINFO:"USERINFO",
-        PLAYLIST:"PLAYLIST"
+        PLAYLIST:"PLAYLIST",
+        MUSIC_URL:"MUSIC_URL",
+        MUSIC_LYRIC:"MUSIC_LYRIC",
+        MUSIC_INFO:"MUSIC_INFO",
     },
     music:{
         recommend:{

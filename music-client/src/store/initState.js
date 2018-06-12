@@ -13,6 +13,18 @@ export default{
         playList:{
             content:null,
             status:0
+        },
+        musicUrl:{
+            content:null,
+            status:0
+        },
+        musicInfo:{
+            content:null,
+            status:0
+        },
+        musicLyric:{
+            content:null,
+            status:0
         }
         
     },

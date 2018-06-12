@@ -6,7 +6,9 @@ export default{
         loginEmail:`${DOMAIN}/loginEmail`,
         loginMobi:`${DOMAIN}/loginMobi`,
         playlist:`${DOMAIN}/user/playlist`,
-        userInfo:`${DOMAIN}/banner`
+        userInfo:`${DOMAIN}/banner`,
+        musicUrl:`${DOMAIN}/music/url`,
+        musicLyric:`${DOMAIN}/music/lyric`
     },
     music:{
         recommend:{

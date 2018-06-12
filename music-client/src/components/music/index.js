@@ -69,11 +69,39 @@ import actions from 'action/music'
     }
     render(){
         let {state,props}=this
-        let recDom=<LoadingInfo status={1} component={<Recommend data={props.music}/>}/>
-        let listDom=<LoadingInfo status={1} component={<Playlist data={props.music} catChange={this.catChange}/>}/>
-        let rankDom=<LoadingInfo status={1} component={<Ranking data={props.music.ranking}/>}/>
-        let artDom=<LoadingInfo status={1} component={<Artist getArtistList={this.getArtistList} data={props.music.artist}/>}/>
-        let newDom=<LoadingInfo status={1} component={<Newtest data={props.music.newAlbum} newAlbumChange={this.newAlbumChange}/>}/>
+        console.log(props)
+        let recDom=<LoadingInfo 
+                    status={1} 
+                    component={<Recommend 
+                                    data={props.music} 
+                                    urlAction={props.musicUrlAction} 
+                                    infoAction={props.musicInfoAction} 
+                                    lyricAction={props.musicLyricAction} 
+                                    musicInfo={props.music.musicInfo}/>}
+                    />
+        let listDom=<LoadingInfo 
+                    status={1} 
+                    component={<Playlist 
+                                data={props.music} 
+                                catChange={this.catChange}/>}
+                    />
+        let rankDom=<LoadingInfo 
+                    status={1} 
+                    component={<Ranking 
+                                data={props.music.ranking}/>}
+                    />
+        let artDom=<LoadingInfo 
+                    status={1} 
+                    component={<Artist 
+                                getArtistList={this.getArtistList} 
+                                data={props.music.artist}/>}
+                    />
+        let newDom=<LoadingInfo 
+                    status={1} 
+                    component={<Newtest 
+                                data={props.music.newAlbum} 
+                                newAlbumChange={this.newAlbumChange}/>}
+                    />
         return <div className="music contentPd">
                 <Tabs
                     defaultActiveKey="recommend"

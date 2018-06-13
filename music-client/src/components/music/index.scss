@@ -184,7 +184,7 @@ $list-margin:20px;
 	}
 	}
 	.recmv{
-		@include flexBox($wrap:nowrap);
+		@include flexBox($wrap:nowrap,$align:flex-start);
 		.rec-item{
 			width:25%;
 			.desc{
@@ -195,6 +195,7 @@ $list-margin:20px;
 			.link{
 				font-size:12px;
 				color:#666;
+				@include text-overflow-ellipsis($line:1);
 				&:hover{
 					color:#333;
 				}

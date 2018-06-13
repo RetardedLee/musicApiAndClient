@@ -4,6 +4,7 @@ import img from "static/star.jpg";
 import mp3 from 'static/demo.mp3'
 import formatSeconds from 'utils/formatSeconds'
 import Tooltip from 'rc-tooltip';
+import {Link} from 'react-router-dom'
 import 'rc-tooltip/assets/bootstrap.css';
 import Lyric from 'lyric-parser'
 
@@ -36,25 +37,24 @@ export default class Player extends React.Component {
       tipVisible:false, //是否显示模式tip,
       loading:false, //因为网络原因中途加载
       playList:[],
-      lyric:null
+      lyric:null,
+      size:0  /* 0最小化 1全屏 */
     }
     this.audio=null
     this.volume=1
   }
   timeUpdate=(e)=>{
-    var currentTime=parseFloat(e.target.currentTime)
-    console.log(parseInt(currentTime * 1000))
+    var currentTime=parseInt(e.target.currentTime*1000)
     this.setState({
       time:currentTime
     })
   }
   timeChange=(event)=>{
-    let time=parseFloat(event.target.value)
+    let time=parseInt(event.target.value)
     this.setState({
       time:time
     },()=>{
-      this.state.lyric.seek(time)
-      this.audio.currentTime=time
+      this.audio.currentTime=time/1000
     })
   }
   volumeChange=(event)=>{
@@ -95,17 +95,15 @@ export default class Player extends React.Component {
   meteDataLoaded=(e)=>{
     // 资源加载完先获取歌曲的时长
     
-    let duration=e.target.duration
+    let duration=e.target.duration * 1000
     let volume=e.target.volume
     let lyric=null
     // 初始化歌词
     if(this.props.musicLyric.status===1){
        lyric= new Lyric(this.props.musicLyric.content.lyric, (e)=>{console.log(e)})
-       console.log(lyric)
        this.setState({lyric})
     }
     this.audio.play()
-    lyric.play()
     this.setState({duration:duration,status:1,volume})
     
   }
@@ -134,7 +132,6 @@ export default class Player extends React.Component {
     }
   // 当中途加载，可以播放之后触发
   onPlaying=(e)=>{
-
     this.setState({
       loading:false
     },()=>{
@@ -143,9 +140,6 @@ export default class Player extends React.Component {
   }
   // 中途需要加载
   onWaiting=(e)=>{
-    if(this.state.lyric !== null){
-      this.state.lyric.stop()
-    }
     this.setState({
       loading:true
     },()=>{
@@ -158,23 +152,15 @@ export default class Player extends React.Component {
       return
     }
     if(this.state.status===1){
-     
       this.setState({
         status:0
       },()=>{
-        if(this.state.lyric !== null){
-          this.state.lyric.stop()
-        }
         this.audio.pause()
       })
     }else{
-     
       this.setState({
         status:1
       },()=>{
-        if(this.state.lyric !== null){
-          this.state.lyric.play()
-        }
         this.audio.play()
       })
     }
@@ -182,8 +168,7 @@ export default class Player extends React.Component {
   // 下一首或者播放完以后
   nextMusic=()=>{
     this.setState({
-      status:0,
-      lyric:null
+      status:0
     })
   }
   prevMusic=(e)=>{
@@ -192,9 +177,19 @@ export default class Player extends React.Component {
       status:0
     })
   }
+  fullScreen=()=>{
+    this.setState({
+      size:"plus"
+    })
+  }
   render() {
     let { state, props } = this;
     let th=this
+    let lyric=[]
+    if(props.musicLyric.status==1 && props.musicLyric.content.lyric != null && props.musicLyric.content.lyric){
+      lyric=new Lyric(props.musicLyric.content.lyric,(e)=>{})
+
+    }
     return (
       <div className="app-player">
       <video width="0" height="0"
@@ -218,7 +213,7 @@ export default class Player extends React.Component {
           </div>
           <div className="time">
             <span>{formatSeconds(state.time)}</span>
-            <input type="range" className="progress" min={0} value={Math.ceil(state.time)} max={state.duration} onChange={this.timeChange} style={{backgroundSize:th.getBgSize(state.time,state.duration)}}/>
+            <input type="range" className="progress" min={0} value={state.time} max={Math.ceil(state.duration)} onChange={this.timeChange} style={{backgroundSize:th.getBgSize(state.time,state.duration)}}/>
             <span>{formatSeconds(state.duration)}</span>
           </div>
           <div className="col">
@@ -236,13 +231,6 @@ export default class Player extends React.Component {
           >
            <i className={`iconfont ${modeMap[state.mode].icon}`} />
         </Tooltip>
-            
-            {/* <i className="iconfont icon-danquxunhuan" />
-            <i className="iconfont icon-danquxunhuan" />
-            <i className="iconfont icon-danquxunhuan" /> <i className="iconfont icon-danquxunhuan" />*/}
-          </div>
-          <div className="lyric">
-            <i>词</i>
           </div>
           <div className="list">
             <i className="iconfont icon-bofangliebiao">
@@ -261,19 +249,43 @@ export default class Player extends React.Component {
             </i>
           </div>
         </div>
-        <div className="mini">
+        {props.musicInfo.status===1?<div className="mini">
           <div className="poster">
             <div className="model">
-              <i className="iconfont icon-quanping" />
+              <i className="iconfont icon-quanping" onClick={this.fullScreen}/>
             </div>
-            <img src={img} />
+            <img src={`${props.musicInfo.content.song.album.picUrl}?param=40y40`} />
           </div>
           <div className="info">
-            <p>{props.musicInfo.status===1?props.musicInfo.content.name:""}</p>
-            <p>{props.musicInfo.status===1?props.musicInfo.content.song.artists[0].name:""}</p>
+            <p>{props.musicInfo.content.name}</p>
+            <p>{props.musicInfo.content.song.artists[0].name}</p>
           </div>
-        </div>
-        <div className="plus">全屏播放器</div>
+        </div>:null}
+        
+        {state.size==="plus"? <div className="plus">
+              <div className="relative">
+                <div className="left">
+                  <div className="bar"></div>
+                  <div className="disc playing">
+                    <img src={img} />
+                  </div>
+                </div>
+                <div className="right">
+                <div className="song-name">Power (Mo Falk Remix)</div>
+                <div className="song-info"><span>专辑</span><Link to="/aaa/bbb">Power (The Remi</Link><span>歌手</span><Link to="/aaa/bbb">Power (The Remi</Link></div>
+                <div className="lyric">
+                  <ul>
+                      {lyric===null?null:lyric.lines.map((value,key)=>{
+                        console.log(state.time,value.time)
+                        return <li className={`line ${state.time===value.time}`} key={value.time}>{value.txt}</li>
+                      })}
+                  </ul>
+                </div>
+                </div>
+                <div className="comment"></div>
+              </div>
+        </div>:null}
+       
       </div>
     );
   }

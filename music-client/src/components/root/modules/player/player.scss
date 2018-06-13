@@ -55,8 +55,63 @@
         position: absolute;
         top:-550px;
         height:550px;
-        background: lightcyan;
-        display: none;
+        background: #fff;
+        z-index:9999;
+        overflow-y:auto;
+        .relative{
+            position:relative;
+            height:450px;
+            @include flexBox($wrap:wrap)
+        }
+        .left{
+            width:40%;
+            height:100%;
+            @include flexBox();
+            .bar{
+
+            }
+            .disc{
+                &.playing{
+                    animation: rotate 15s linear infinite;
+                }
+                width:270px;
+                height:270px;
+                padding:49px;
+                
+                background-image:url("../../../../resource/disc.png");
+                background-size:contain;
+                background-position:center;
+
+                margin:0 auto;
+                img{
+                    width:100%;
+                    height:100%;
+                    display:block;
+                    border-radius:50%;
+
+                }
+            }
+        }
+        .right{
+            width:60%;
+            height:100%;
+            .song-name{
+                font-size:20px;
+                color:#333;
+                line-height:40px;
+            }
+            .song-info{
+                line-height:30px;
+            }
+            .lyric{
+                height:380px;
+                overflow-y: auto;
+                width:435px;
+            }
+        }
+        .comment{
+            width:100%;
+        }
     }
     .controls{
         width: 100%;

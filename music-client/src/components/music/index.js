@@ -61,7 +61,6 @@ import actions from 'action/music'
         this.props.getListAction(e)
     }
     getArtistList=(e)=>{
-        console.log(e)
         this.props.artistTopAction(e)
     }
     newAlbumChange=(e)=>{
@@ -69,7 +68,6 @@ import actions from 'action/music'
     }
     render(){
         let {state,props}=this
-        console.log(props)
         let recDom=<LoadingInfo 
                     status={1} 
                     component={<Recommend 

@@ -21,6 +21,10 @@ class App extends Component {
     userInfoClick=()=>{
         console.log(1)
     }
+    playMusic=(id)=>{
+        this.props.musicUrlAction({id})
+        this.props.musicLyricAction({index:id})
+    }
     render() {
         let {props,state}=this
         console.log(props)

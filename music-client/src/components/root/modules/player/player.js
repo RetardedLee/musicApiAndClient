@@ -5,8 +5,8 @@ import mp3 from 'static/demo.mp3'
 import formatSeconds from 'utils/formatSeconds'
 import Tooltip from 'rc-tooltip';
 import {Link} from 'react-router-dom'
+import LyricView from './lyric'
 import 'rc-tooltip/assets/bootstrap.css';
-import Lyric from 'lyric-parser'
 
 const modeMap = [{
     icon: "icon-shunxubofang-",
@@ -37,14 +37,15 @@ export default class Player extends React.Component {
       tipVisible:false, //是否显示模式tip,
       loading:false, //因为网络原因中途加载
       playList:[],
-      lyric:null,
       size:0  /* 0最小化 1全屏 */
     }
     this.audio=null
     this.volume=1
+    this.lyricDom=null
   }
   timeUpdate=(e)=>{
     var currentTime=parseInt(e.target.currentTime*1000)
+    console.log(currentTime)
     this.setState({
       time:currentTime
     })
@@ -99,10 +100,6 @@ export default class Player extends React.Component {
     let volume=e.target.volume
     let lyric=null
     // 初始化歌词
-    if(this.props.musicLyric.status===1){
-       lyric= new Lyric(this.props.musicLyric.content.lyric, (e)=>{console.log(e)})
-       this.setState({lyric})
-    }
     this.audio.play()
     this.setState({duration:duration,status:1,volume})
     
@@ -179,17 +176,13 @@ export default class Player extends React.Component {
   }
   fullScreen=()=>{
     this.setState({
-      size:"plus"
+      size:1
     })
   }
   render() {
     let { state, props } = this;
     let th=this
-    let lyric=[]
-    if(props.musicLyric.status==1 && props.musicLyric.content.lyric != null && props.musicLyric.content.lyric){
-      lyric=new Lyric(props.musicLyric.content.lyric,(e)=>{})
-
-    }
+    console.log(this.lyricDom)
     return (
       <div className="app-player">
       <video width="0" height="0"
@@ -262,30 +255,23 @@ export default class Player extends React.Component {
           </div>
         </div>:null}
         
-        {state.size==="plus"? <div className="plus">
+        {state.size===1? <div className="plus">
               <div className="relative">
                 <div className="left">
                   <div className="bar"></div>
-                  <div className="disc playing">
+                  <div className={`disc ${state.status===1?"playing":""}`}>
                     <img src={img} />
                   </div>
                 </div>
                 <div className="right">
                 <div className="song-name">Power (Mo Falk Remix)</div>
                 <div className="song-info"><span>专辑</span><Link to="/aaa/bbb">Power (The Remi</Link><span>歌手</span><Link to="/aaa/bbb">Power (The Remi</Link></div>
-                <div className="lyric">
-                  <ul>
-                      {lyric===null?null:lyric.lines.map((value,key)=>{
-                        console.log(state.time,value.time)
-                        return <li className={`line ${state.time===value.time}`} key={value.time}>{value.txt}</li>
-                      })}
-                  </ul>
-                </div>
+                  {<LyricView lyric={props.musicLyric} time={state.time} />}
                 </div>
                 <div className="comment"></div>
               </div>
         </div>:null}
-       
+                
       </div>
     );
   }

@@ -6,10 +6,11 @@ import RecMv from './recMv'
 import NewTest from './newtest'
 export default class Recommend extends React.Component{
     playMusic=(e)=>{
-        console.log(e)
         this.props.urlAction({id:e.id})
         this.props.lyricAction({id:e.id})
         this.props.infoAction(e)
+        console.log(this.props.lyricAction)
+        console.log(e)
     }
     render(){
         let {state,props}=this

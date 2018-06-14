@@ -77,9 +77,18 @@ const fetchData = (type, url, data, field /* 判断是否为空值的字段 */ ,
                         })
                     }
                     return body
+                }).catch((e)=>{
+                    dispatch({
+                        
+                        payload:{
+                            content:null,
+                            status:-5,
+                        },
+                        type
+                    })
                 })
         }
     }
-    return
+    return 
 }
 export default fetchData

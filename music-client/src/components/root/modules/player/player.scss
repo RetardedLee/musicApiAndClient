@@ -47,6 +47,8 @@
                 color:#aaa;
                 font-size: 12px;
                 line-height: 20px;
+                @include text-overflow-ellipsis();
+                width:140px;
             }
         }
     }
@@ -107,6 +109,20 @@
                 height:380px;
                 overflow-y: auto;
                 width:435px;
+                color:#333;
+                font-family: monospace;
+                line-height: 30px;
+                overflow: hidden;
+                font-size: 14px;
+                ul{
+                    transition:transform .5s;
+                }
+                .current{
+                    color:red;
+                    transition: all .5s;
+                    font-size: 20px;
+                   background-clip : text;  
+                }
             }
         }
         .comment{

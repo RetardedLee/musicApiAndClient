@@ -19,15 +19,17 @@ class App extends Component {
         this.props.searchAction(keywords)
     }
     userInfoClick=()=>{
-        console.log(1)
     }
     playMusic=(id)=>{
         this.props.musicUrlAction({id})
-        this.props.musicLyricAction({index:id})
+        this.props.musicLyricAction({id})
+        this.props.musicInfoAction({index:id})
+    }
+    getComment=(id)=>{
+        this.props.musicCommentAction({id})
     }
     render() {
         let {props,state}=this
-        console.log(props)
         return (
                 <div className = "music-app">
                     <Header searchSuggest={props.public.searchSuggest} login={props.public.login} searchHandler={this.searchHandler} userInfoClick={this.userInfoClick}/>
@@ -35,7 +37,7 @@ class App extends Component {
                     <div className="app-main">
                         {renderRoutes(props.route.routes)}
                     </div>
-                    <Player musicUrl={props.public.musicUrl} musicInfo={props.public.musicInfo} musicLyric={props.public.musicLyric}/>
+                    <Player musicUrl={props.public.musicUrl} musicInfo={props.public.musicInfo} musicLyric={props.public.musicLyric} getComment={this.getComment} musicComment={props.public.musicComment}/>
                 </div>
             );
     }

@@ -25,6 +25,10 @@ export default{
         musicLyric:{
             content:null,
             status:0
+        },
+        musicComment:{
+            content:null,
+            status:0
         }
         
     },

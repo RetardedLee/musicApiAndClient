@@ -2,10 +2,12 @@ import React from "react";
 import "./player.scss";
 import img from "static/star.jpg";
 import mp3 from 'static/demo.mp3'
+import LoadingInfo from 'component/common/LoadingInfo'
 import formatSeconds from 'utils/formatSeconds'
 import Tooltip from 'rc-tooltip';
 import {Link} from 'react-router-dom'
 import LyricView from './lyric'
+import Comment from './comment'
 import 'rc-tooltip/assets/bootstrap.css';
 
 const modeMap = [{
@@ -45,7 +47,6 @@ export default class Player extends React.Component {
   }
   timeUpdate=(e)=>{
     var currentTime=parseInt(e.target.currentTime*1000)
-    console.log(currentTime)
     this.setState({
       time:currentTime
     })
@@ -177,12 +178,20 @@ export default class Player extends React.Component {
   fullScreen=()=>{
     this.setState({
       size:1
+    },()=>{
+      let th=this
+      let id=this.props.musicInfo.content[0].id
+      this.props.getComment(id)
+    })
+  }
+  scaleScreen=()=>{
+    this.setState({
+      size:0
     })
   }
   render() {
     let { state, props } = this;
     let th=this
-    console.log(this.lyricDom)
     return (
       <div className="app-player">
       <video width="0" height="0"
@@ -206,12 +215,27 @@ export default class Player extends React.Component {
           </div>
           <div className="time">
             <span>{formatSeconds(state.time)}</span>
-            <input type="range" className="progress" min={0} value={state.time} max={Math.ceil(state.duration)} onChange={this.timeChange} style={{backgroundSize:th.getBgSize(state.time,state.duration)}}/>
+            <input 
+                type="range" 
+                className="progress" 
+                min={0} 
+                value={state.time} 
+                max={Math.ceil(state.duration)} 
+                onChange={this.timeChange} 
+                style={{backgroundSize:th.getBgSize(state.time,state.duration)}}/>
             <span>{formatSeconds(state.duration)}</span>
           </div>
           <div className="col">
             {<i className={`iconfont ${state.volume?"icon-yinliang":"icon-jingyin"}`} onClick={this.volumeClick}/>}
-            <span><input type="range" className="progress" min={0} value={state.volume} step={0.1} max={1} onChange={this.volumeChange} style={{backgroundSize:th.getBgSize(state.volume,1)}}/></span>
+            <span><input type="range" 
+                        className="progress" 
+                        min={0} 
+                        value={state.volume} 
+                        step={0.1} 
+                        max={1} 
+                        onChange={this.volumeChange} 
+                        style={{backgroundSize:th.getBgSize(state.volume,1)}}/>
+            </span>
           </div>
           <div className="mode">
           <Tooltip
@@ -247,32 +271,54 @@ export default class Player extends React.Component {
             <div className="model">
               <i className="iconfont icon-quanping" onClick={this.fullScreen}/>
             </div>
-            <img src={`${props.musicInfo.content.song.album.picUrl}?param=40y40`} />
+            <img src={`${props.musicInfo.content[0].al.picUrl}?param=40y40`} />
           </div>
           <div className="info">
-            <p>{props.musicInfo.content.name}</p>
-            <p>{props.musicInfo.content.song.artists[0].name}</p>
+            <p>{props.musicInfo.content[0].name}</p>
+            <p>{props.musicInfo.content[0].ar[0].name}</p>
           </div>
         </div>:null}
         
-        {state.size===1? <div className="plus">
+        {state.size===1 && props.musicInfo.status===1? <div className="plus">
               <div className="relative">
+                <i className="iconfont icon-suoxiao" onClick={this.scaleScreen}></i>
                 <div className="left">
                   <div className="bar"></div>
                   <div className={`disc ${state.status===1?"playing":""}`}>
-                    <img src={img} />
+                    <img src={props.musicInfo.content[0].al.picUrl} />
                   </div>
                 </div>
                 <div className="right">
-                <div className="song-name">Power (Mo Falk Remix)</div>
-                <div className="song-info"><span>专辑</span><Link to="/aaa/bbb">Power (The Remi</Link><span>歌手</span><Link to="/aaa/bbb">Power (The Remi</Link></div>
-                  {<LyricView lyric={props.musicLyric} time={state.time} />}
+                <div className="song-name">{props.musicInfo.content[0].name}</div>
+                <div className="song-info">
+                    <span style={{verticalAlign:"middle"}}>专辑</span>
+                    <Link 
+                        to={`/album/${props.musicInfo.content[0].al.id}`} 
+                        className="link-album">
+                        {props.musicInfo.content[0].al.name}
+                    </Link>
+                    <span style={{verticalAlign:"middle",marginLeft:20}}>歌手</span>
+                    <Link 
+                        to={`/artist/${props.musicInfo.content[0].ar[0].id}`}  
+                        className="link-artist">
+                        {props.musicInfo.content[0].ar[0].name}
+                    </Link>
                 </div>
-                <div className="comment"></div>
+                  {<LyricView 
+                        lyric={props.musicLyric} 
+                        time={state.time} />
+                  }
+                </div>
+                <div className="comment">
+                <h2 className="title">听友评论<span className="sub">{`（已有${props.musicComment.status===1?props.musicComment.content.total:0}条评论）`}</span></h2>
+                  <LoadingInfo 
+                        component={<Comment 
+                                    comment={props.musicComment.content}/>} 
+                        status={props.musicComment.status} />
+                </div>
               </div>
-        </div>:null}
-                
+        </div>:null}     
       </div>
-    );
+    )
   }
 }

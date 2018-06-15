@@ -8,7 +8,9 @@ export default{
         playlist:`${DOMAIN}/user/playlist`,
         userInfo:`${DOMAIN}/banner`,
         musicUrl:`${DOMAIN}/music/url`,
-        musicLyric:`${DOMAIN}/music/lyric`
+        musicLyric:`${DOMAIN}/music/lyric`,
+        musicInfo:`${DOMAIN}/music/detail`,
+        musicComment:`${DOMAIN}/music/comment`
     },
     music:{
         recommend:{

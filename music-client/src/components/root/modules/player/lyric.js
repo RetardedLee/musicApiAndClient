@@ -3,20 +3,8 @@ import Lyric from 'lyric-parser'
 export default class LyricView extends React.Component{
     constructor(props){
         super(props)
-        this.dom=null
+
         this.line=0
-    }
-    componentDidMount(){
-        this.dom.scrollIntoView(true)
-    }
-    componentDidUpdate(){
-        console.log(this.dom)
-        this.dom.scrollTo({top:"100px"})
-        if(this.line > 5){
-            this.dom.scrollTo({top:(this.line-5)*40})
-            
-        }
-       
     }
     render(){
         let {lyric,time}=this.props
@@ -28,8 +16,8 @@ export default class LyricView extends React.Component{
         if(lyric.status==1){
             lyricParsed=new Lyric(lyric.content,()=>{})
         }
-    return (lyricParsed===null?(<p>暂无歌词哦~</p>):(<div className="lyric">
-        <ul ref={ins=>{this.dom=ins}} style={{transform:`translate(0,-${transY}px)`}}>
+    return (lyricParsed===null?(<p style={{textAlign:"center",lineHeight:"400px"}}>暂无歌词哦~</p>):(<div className="lyric">
+        <ul style={{transform:`translate(0,-${transY}px)`}}>
             {lyricParsed.lines.map((value,key)=>{
                 var current=false
                 if(key < lyricParsed.lines.length-1){

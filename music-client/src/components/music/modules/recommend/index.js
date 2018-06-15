@@ -8,9 +8,7 @@ export default class Recommend extends React.Component{
     playMusic=(e)=>{
         this.props.urlAction({id:e.id})
         this.props.lyricAction({id:e.id})
-        this.props.infoAction(e)
-        console.log(this.props.lyricAction)
-        console.log(e)
+        this.props.infoAction({index:e.id})
     }
     render(){
         let {state,props}=this

@@ -10,6 +10,6 @@ function musicComment(req, res, next) {
         limit: req.query.limit || 20,
         csrf_token: ""
     };
-    sendRequest(`${cloudPath.musicComment}/${rid}`, data, req, res)
+    sendRequest(`${cloudPath.musicComment}${rid}`, data, req, res)
 }
 module.exports = musicComment

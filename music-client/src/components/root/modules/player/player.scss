@@ -55,15 +55,27 @@
     .plus{
         width:1000px;
         position: absolute;
-        top:-550px;
+        top:-551px;
         height:550px;
-        background: #fff;
+        background: #f9f9fb;
         z-index:9999;
         overflow-y:auto;
+
         .relative{
             position:relative;
             height:450px;
-            @include flexBox($wrap:wrap)
+            @include flexBox($wrap:wrap);
+            .icon-suoxiao{
+                color:#fff;
+                font-size: 30px;
+                position: absolute;
+                top:20px;
+                right:20px;
+                border-radius: 2px;
+                cursor: pointer;
+                background: rgba(0,0,0,.1);
+                text-align: center;
+            }
         }
         .left{
             width:40%;
@@ -74,7 +86,7 @@
             }
             .disc{
                 &.playing{
-                    animation: rotate 15s linear infinite;
+                    animation: rotate 20s linear infinite;
                 }
                 width:270px;
                 height:270px;
@@ -97,36 +109,125 @@
         .right{
             width:60%;
             height:100%;
+            padding-right:60px;
             .song-name{
                 font-size:20px;
                 color:#333;
                 line-height:40px;
+                text-align: center;
+                @include text-overflow-ellipsis();
             }
             .song-info{
                 line-height:30px;
+                text-align: center;
+                @include text-overflow-ellipsis();
+                font-size: 12px;
+            }
+            .link-album{
+                color:#0849ab;
+                cursor: pointer;
+                margin-left: 15px;
+                display: inline-block;
+                width:120px;
+                @include text-overflow-ellipsis();
+                text-align: left;
+                vertical-align: middle;
+            }
+            .link-artist{
+                color:#0849ab;
+                cursor: pointer;
+                margin-left: 15px;
+                display: inline-block;
+                width:120px;
+                @include text-overflow-ellipsis();
+                text-align: left;
+                vertical-align: middle;
             }
             .lyric{
-                height:380px;
+                height:350px;
                 overflow-y: auto;
-                width:435px;
-                color:#333;
+                width:100%;
+                color:#222;
                 font-family: monospace;
                 line-height: 30px;
                 overflow: hidden;
                 font-size: 14px;
+                text-align: center;
+                margin-top:30px;
                 ul{
                     transition:transform .5s;
                 }
                 .current{
-                    color:red;
+                    color:#c20c0c;
                     transition: all .5s;
-                    font-size: 20px;
+                    font-size: 16px;
                    background-clip : text;  
                 }
             }
         }
         .comment{
             width:100%;
+
+           
+            .title{
+                width:540px;
+                margin-left:60px;
+                margin-top:40px;
+                height:33px;
+                font-size:20px;
+                border-bottom: 2px solid #c20c0c;
+                .sub{
+                    color:#666;
+                    font-size: 14px;
+                }
+            }
+            .sub-title{
+                height: 25px;
+                border-bottom: 1px solid #e1e1e2;
+                color:#000;
+                font-size: 14px;
+                margin-top:15px;
+                margin-bottom:15px;
+            }
+            .comment-list{
+                width:540px;
+                margin-left: 60px;
+                .comment-item{
+                    line-height: 1.4;
+                    padding:10px 0;
+                    @include flexBox($justify:flex-start,$align:flex-start);
+                    border-bottom:1px solid #e1e1e2;
+                    img{
+                        border-radius: 50%;
+                    }
+                    .user-link{
+                        color:rgb(10,99,168);
+                    }
+                    .detail{
+                        .con{
+                            img{
+                                vertical-align: middle;
+                            }
+                        }
+                        margin-left:10px;
+                        font-size:12px;
+                        P:last-child{
+                            margin-top:5px;
+                            color:#999;
+                        }
+                        .pub-time{
+                            width:500px;
+                            @include flexBox($justify:space-between);
+                        }
+                        .rep{
+                            background: rgb(241,241,241);
+                            line-height: 1.4;
+                            margin-top: 10px;
+                            padding:10px;
+                        }
+                    }
+                }
+            }
         }
     }
     .controls{

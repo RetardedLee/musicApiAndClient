@@ -1,11 +1,11 @@
 import React from "react";
 import "./player.scss";
-import img from "static/star.jpg";
-import mp3 from 'static/demo.mp3'
 import LoadingInfo from 'component/common/LoadingInfo'
 import formatSeconds from 'utils/formatSeconds'
 import Tooltip from 'rc-tooltip';
 import {Link} from 'react-router-dom'
+import Pagination from 'rc-pagination'
+import 'rc-pagination/assets/index.css';
 import LyricView from './lyric'
 import Comment from './comment'
 import 'rc-tooltip/assets/bootstrap.css';
@@ -39,11 +39,21 @@ export default class Player extends React.Component {
       tipVisible:false, //是否显示模式tip,
       loading:false, //因为网络原因中途加载
       playList:[],
-      size:0  /* 0最小化 1全屏 */
+      size:0  /* 0最小化 1全屏 */,
+      offset:0,
+      limit:20,
+      current:1
     }
     this.audio=null
     this.volume=1
     this.lyricDom=null
+  }
+  getCommentPage=(current,offset,limit)=>{
+    this.setState({
+      current:current
+    })
+    let id=this.props.musicInfo.content[0].id
+    this.props.getComment(id,offset,limit)
   }
   timeUpdate=(e)=>{
     var currentTime=parseInt(e.target.currentTime*1000)
@@ -177,11 +187,11 @@ export default class Player extends React.Component {
   }
   fullScreen=()=>{
     this.setState({
-      size:1
+      size:1,
+      current:0
     },()=>{
       let th=this
-      let id=this.props.musicInfo.content[0].id
-      this.props.getComment(id)
+      this.getCommentPage(1,0,20)
     })
   }
   scaleScreen=()=>{
@@ -313,8 +323,12 @@ export default class Player extends React.Component {
                 <h2 className="title">听友评论<span className="sub">{`（已有${props.musicComment.status===1?props.musicComment.content.total:0}条评论）`}</span></h2>
                   <LoadingInfo 
                         component={<Comment 
-                                    comment={props.musicComment.content}/>} 
-                        status={props.musicComment.status} />
+                                    comment={props.musicComment.content}
+                                    getComment={this.getCommentPage}
+                                    current={state.current}
+                                    />} 
+                                    status={props.musicComment.status} 
+                                    />
                 </div>
               </div>
         </div>:null}     

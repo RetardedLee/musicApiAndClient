@@ -28,11 +28,14 @@ export const musicCommentAction=(data)=>dispatch=>{
                 }
             }).then(response=>response.json())
             .then(body => {
-                if (body.code == 200 && body.total && body.comments) {
-                 
+                if (body.code == 200 && body.total && body.comments ) {
+                    let hotComment=[]
+                    if(body.hotComments){
+                        hotComment=body.hotComments
+                    }
                         dispatch({
                             payload: {
-                                content: {comments:body.comments,hotComments:body.hotComments,total:body.total},
+                                content: {comments:body.comments,hotComments:hotComment,total:body.total},
                                 status: 1
                             },
                             type:types.public.MUSIC_COMMENT

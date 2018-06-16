@@ -60,6 +60,7 @@ const privateNew=require("./controllers/privateNew")
 const getPlayList=require("./controllers/getPlayList")
 const config = require("./webConfig.js")
 const newAblum=require("./controllers/newAlbum")
+const vedioCat=require("./controllers/vedioCat")
 
 log4js.configure({
     appenders: { out: { type: 'stdout', layout: { type: 'coloured' } } },
@@ -129,6 +130,7 @@ app.get("/private/mv",privateMv)
 app.get("/private/new",privateNew)
 app.get("/playlist/list",getPlayList)
 app.get("/new/album",newAblum)
+app.get("/vedio/cat",vedioCat)
 var port = config.port || 3000
 app.listen(port, (server) => {
     console.info(`服务启动......端口：${port}  当前时间${new Date().toTimeString()}`)

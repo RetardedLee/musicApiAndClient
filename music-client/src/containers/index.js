@@ -3,7 +3,7 @@ import App from 'component/root/App';
 import createContainer from 'utils/createContainer'
 import actions from 'action/publicAction'
 import Music from './music'
-import Friend from './friend'
+import Vedio from './vedio'
 let AppContainer=createContainer(App,"public",actions)
 let routes=[
     {
@@ -14,18 +14,9 @@ let routes=[
                 component:Music/* lazyLoader(() => import('./music')) */,
             },
             {
-                path:"/friend",
-                component:Friend/* lazyLoader(()=>import("./friend")) */
-            },
-            {
-                path:"/playlist",
-                component:Friend,
-                routes:[{
-                    path:"/playlist/:id",
-                    exact:true,
-                    component:Friend/* lazyLoader(()=>import("./friend")) */
-                }]
-            },
+                path:"/vedio",
+                component:Vedio 
+            }
         ]
     }
 ]

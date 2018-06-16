@@ -9,6 +9,7 @@ import store from 'store/store'
 import {Provider} from 'react-redux'
 import routes from './containers'
 import registerServiceWorker from './registerServiceWorker';
+
 ReactDOM.render(<Provider store={store}>
                     <Router initialEntries={["/music"]}>
                         {renderRoutes(routes)}

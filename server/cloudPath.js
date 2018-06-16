@@ -126,7 +126,9 @@ module.exports = {
     //获取分类下歌单列表
     getPlayList:"/weapi/playlist/list",
     // 新碟上架
-    newAlbum:"/weapi/album/new"
+    newAlbum:"/weapi/album/new",
+    // 视频分类
+    vedioCat:"https://interface.music.163.com/eapi/cloudvideo/category/list"
 }
 
 /* 

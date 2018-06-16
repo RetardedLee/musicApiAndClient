@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import Swiper from 'react-id-swiper';
-import defaultSwiper from 'static/timg.jpg'
+import React, { Component } from 'react'
+import Swiper from 'react-id-swiper'
 import LoadingInfo from 'component/common/LoadingInfo'
 const params = {
   effect: 'coverflow',
@@ -28,7 +27,7 @@ const params = {
         let{state,props}=this
         return (props.data.status==1?(
           <Swiper {...params}>
-          {props.data.content.map((v,k)=><div className="flexBox" key={k}><img src={`${v.picUrl}?param=400y170`} onError={(e)=>{e.target.src=defaultSwiper}} alt="每日推荐"/></div>)}
+          {props.data.content.map((v,k)=><div className="flexBox" key={k}><img src={`${v.picUrl}?param=400y170`}  alt="每日推荐"/></div>)}
           </Swiper>
         ):<LoadingInfo status={0} />)
       }

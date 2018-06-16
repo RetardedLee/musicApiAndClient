@@ -36,5 +36,13 @@ export default {
         newTest:{
             NEW_ALBUM:"NEW_ALBUM"
         }
+    },
+    vedio:{
+        vedio:{
+
+        },
+        mv:{
+            
+        }
     }
 }

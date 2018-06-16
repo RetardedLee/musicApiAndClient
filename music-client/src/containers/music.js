@@ -1,10 +1,7 @@
 import React from 'react'
 import Loadable from 'react-loadable'
-import {injectReducer} from 'store/store'
-import reducers from 'reducer/music'
-injectReducer("music",reducers)
 const MusicLodable=Loadable({
-    loader:()=>import("component/music"),
+    loader:()=>{return import("component/music")},
     loading:()=><span></span>
 })
 class Music extends React.Component{
@@ -12,5 +9,4 @@ class Music extends React.Component{
         return <MusicLodable />
     }
 }
-
 export default Music

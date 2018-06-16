@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import {renderRoutes} from 'react-router-config'
+import {withRouter} from 'react-router-dom'
 import Header from './modules/header/header'
 import Menu from './modules/menu/menu'
 import Player from './modules/player/player';
@@ -8,12 +9,14 @@ import './App.scss';
 class App extends Component {
     componentDidMount(){
         this.props.userInfoAction().then((response)=>{
-            console.log(response)
             if(response.code===200 && response.userInfo != null){
                  let uid=response.payload.content.userId
                 this.props.playListAction(uid)
             }
         })
+    }
+    commentPageChange=(e)=>{
+
     }
     searchHandler=(keywords)=>{
         this.props.searchAction(keywords)
@@ -25,8 +28,8 @@ class App extends Component {
         this.props.musicLyricAction({id})
         this.props.musicInfoAction({index:id})
     }
-    getComment=(id)=>{
-        this.props.musicCommentAction({id})
+    getComment=(id,offset,limit=20)=>{
+        this.props.musicCommentAction({id,offset,limit})
     }
     render() {
         let {props,state}=this
@@ -37,7 +40,12 @@ class App extends Component {
                     <div className="app-main">
                         {renderRoutes(props.route.routes)}
                     </div>
-                    <Player musicUrl={props.public.musicUrl} musicInfo={props.public.musicInfo} musicLyric={props.public.musicLyric} getComment={this.getComment} musicComment={props.public.musicComment}/>
+                    <Player 
+                        musicUrl={props.public.musicUrl} 
+                        musicInfo={props.public.musicInfo} 
+                        musicLyric={props.public.musicLyric} 
+                        getComment={this.getComment} 
+                        musicComment={props.public.musicComment}/>
                 </div>
             );
     }

@@ -1,6 +1,18 @@
-import Vedio from 'component/vedio'
-import { withRouter } from 'react-router-dom'
-export default {
-        path:"/vedio",
-        component:withRouter(Vedio),
+
+import React from 'react'
+import Loadable from 'react-loadable'
+import reducers from 'reducer/vedio'
+
+const VedioLodable=Loadable({
+    loader:()=>{return import("component/vedio")},
+    loading:()=><span></span>
+})
+class Vedio extends React.Component{
+    render(){
+        console.log("路由按需加载")
+        return <VedioLodable />
     }
+}
+
+
+export default Vedio

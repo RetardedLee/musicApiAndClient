@@ -272,6 +272,7 @@ $list-margin:20px;
 				.artist{
 					color:#7d7d7d;
 				}
+				
 				.name,.artist{
 					@include text-overflow-ellipsis(1);
 					font-family: monospace;
@@ -479,6 +480,10 @@ $list-margin:20px;
 	}
 	.rec-list{
 		@include flexBox($justify:flex-start,$wrap:wrap);
+	}
+	.infinite-scroll{
+		height:370px;
+		overflow: auto;
 	}
 }
 .new-test{

@@ -36,5 +36,8 @@ export default{
             newAlbum:`${DOMAIN}/new/album`
         }
         
+    },
+    vedio:{
+        vedioList:`${DOMAIN}/vedio/catlist`
     }
 }

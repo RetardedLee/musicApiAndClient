@@ -1,7 +1,6 @@
 
 import React from 'react'
 import Loadable from 'react-loadable'
-import reducers from 'reducer/vedio'
 
 const VedioLodable=Loadable({
     loader:()=>{return import("component/vedio")},

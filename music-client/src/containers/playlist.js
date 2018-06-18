@@ -1,5 +1,15 @@
-import Playlist from './playlist'
-export default {
-        path:"/playlist",
-        component:Playlist
+import React from 'react'
+import Loadable from 'react-loadable'
+
+const PlayListLodable=Loadable({
+    loader:()=>{return import("component/playlist")},
+    loading:()=><span></span>
+})
+class PlayList extends React.Component{
+    render(){
+        return <PlayListLodable />
     }
+}
+
+
+export default PlayList

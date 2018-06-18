@@ -1,11 +1,10 @@
 import syncReducers from 'reducer/publicReducer'
-import { applyMiddleware, createStore,compose } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import {combineReducers} from 'redux'
 import thunk from 'redux-thunk'
-import logger from 'redux-logger'
-import initState from './initState'
 import musicReducer from 'reducer/music'
 import vedioReducer from 'reducer/vedio'
+import playlistReducer from 'reducer/playlist'
 const middlewares = [thunk];
 
 if (process.env.NODE_ENV === `development`) {
@@ -16,7 +15,8 @@ if (process.env.NODE_ENV === `development`) {
 const rootReducer=combineReducers({
   public:syncReducers,
   music:musicReducer,
-  vedio:vedioReducer
+  vedio:vedioReducer,
+  playlist:playlistReducer
 }) 
 const store = createStore(rootReducer,applyMiddleware(...middlewares));
 

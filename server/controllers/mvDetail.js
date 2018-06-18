@@ -8,6 +8,8 @@ function mvDetail(req, res, next) {
         id: mvid
     }
     console.log(data)
-    sendRequest(cloudPath.mvDetail, data, req, res)
+    sendRequest(cloudPath.mvDetail, data, req, res,(body)=>{
+        console.log(body)
+    })
 }
 module.exports = mvDetail

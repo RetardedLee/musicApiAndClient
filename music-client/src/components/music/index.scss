@@ -239,7 +239,12 @@ $list-margin:20px;
 
 			}
 			
-			
+			.artist{
+				.artist-link{
+					color:#999;
+					font-family: monospace;
+				}
+			}
 			.relative{
 				width:40px;
 				height:40px;
@@ -493,6 +498,7 @@ $list-margin:20px;
 	}
 	.album-list{
 		img{width:110px;height:110px;}
+
 		.relative{
 			background: url("../../resource/coverall.png") no-repeat center right;
 		}

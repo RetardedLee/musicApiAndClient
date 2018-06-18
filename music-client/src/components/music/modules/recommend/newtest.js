@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link } from 'react-router-dom'
 export default class Newtest extends React.Component{
     onClick(item){
         this.props.playMusic(item)
@@ -15,7 +16,7 @@ export default class Newtest extends React.Component{
                             </div>
                             <div className="info">
                                 <h3 className="name" title={v.name}>{v.name}</h3>
-                                <h4 className="artist" title={v.song.artists[0].name}>{v.song.artists[0].name}</h4>
+                                <h4 className="artist" title={v.song.artists[0].name}><Link to={`/artist/${v.song.artists[0].id}`} className="artist-link">{v.song.artists[0].name}</Link></h4>
                             </div>
                             
                         </li>)}

@@ -9,6 +9,6 @@ function playlistComment(req, res, next) {
         rid: rid,
         limit: req.query.limit || 20,
     }
-    sendRequest(`${cloudPath.playlistComment}/${rid}`, data, req, res)
+    sendRequest(`${cloudPath.playlistComment}${rid}`, data, req, res)
 }
 module.exports = playlistComment

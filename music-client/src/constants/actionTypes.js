@@ -44,5 +44,9 @@ export default {
         mv:{
             
         }
+    },
+    playList:{
+        PLAYLIST_DETAIL:"PLAYLIST_DETAIL",
+        PLAYLIST_COMMENT:"PLAYLIST_COMMENT"
     }
 }

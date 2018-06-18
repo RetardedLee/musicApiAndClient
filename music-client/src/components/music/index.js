@@ -1,6 +1,4 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
-
 import LoadingInfo from 'component/common/LoadingInfo'
 import Artist from './modules/artist'
 import Newtest from './modules/newtest'
@@ -14,7 +12,6 @@ import 'rc-tabs/assets/index.css';
 import './index.scss'
 import createContainer from 'utils/createContainer'
 import actions from 'action/music'
-import reducers from 'reducer/music'
  class Music extends React.Component{
      constructor(props){
         super(props)

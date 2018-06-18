@@ -19,31 +19,11 @@ export default class Menu extends React.Component{
                         {
                             props.login.status===1?null:<dd className="nav-link">(登录后查看)</dd>
                         }
-                        <dd><NavLink to="/playlist" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist1" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist2" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
                         <dt>收藏的歌单</dt>
                         {
                             props.login.status===1?null:<dd className="nav-link">(登录后查看)</dd>
                         }
-                        <dd><NavLink to="/playlist" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist/1" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist/2" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist3" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist4" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist5" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist3" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist4" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist5" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist3" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist4" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist5" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist3" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist4" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist5" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist3" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist4" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
-                        <dd><NavLink to="/playlist5" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-playlist"></i>我的歌单</NavLink></dd>
+                        
                         
                     </dl>
             </div>)

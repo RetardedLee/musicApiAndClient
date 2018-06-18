@@ -110,6 +110,16 @@ export default{
             
         }
     },
+    playList:{
+        playListDetail:{
+            content:null,
+            status:0
+        },
+        playListComment:{
+            content:null,
+            status:0
+        }
+    },
     friend:{
 
     }

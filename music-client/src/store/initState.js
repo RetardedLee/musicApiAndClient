@@ -122,5 +122,32 @@ export default{
     },
     friend:{
 
+    },
+    artist:{
+        artistSurvey:{
+            content:null,
+            status:0
+        },
+        artistAlbum:{
+           content:{
+                data:[],
+                hasmore:true
+            },
+            status:0
+        },
+        artistMv:{
+            content:{
+                data:[],
+                hasmore:true
+            },
+            status:0
+        },
+        artistSimilar:{
+
+        },
+        artistDesc:{
+            content:null,
+            status:0
+        }
     }
 }

@@ -3,6 +3,7 @@ const cloudPath = require("../cloudPath.js")
 
 function artistDesc(req, res, next) {
     const id = req.query.id
+    const data={id}
     sendRequest(cloudPath.artistDesc, data, req, res)
 }
 module.exports = artistDesc

@@ -43,5 +43,12 @@ export default{
     playList:{
         playListDetail:`${DOMAIN}/playlist/detail`,
         playListComment:`${DOMAIN}/playlist/comment`
+    },
+    artist:{
+        artistSurvey:`${DOMAIN}/artist`,
+        artistAlbum:`${DOMAIN}/artist/album`,
+        artistMv:`${DOMAIN}/artist/mv`,
+        artistDesc:`${DOMAIN}/artist/desc`,
+        artistSimilar:`${DOMAIN}/artist/similar`,
     }
 }

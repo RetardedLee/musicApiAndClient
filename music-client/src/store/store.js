@@ -5,6 +5,7 @@ import thunk from 'redux-thunk'
 import musicReducer from 'reducer/music'
 import vedioReducer from 'reducer/vedio'
 import playlistReducer from 'reducer/playlist'
+import artistReducer from 'reducer/artist'
 const middlewares = [thunk];
 
 if (process.env.NODE_ENV === `development`) {
@@ -16,7 +17,8 @@ const rootReducer=combineReducers({
   public:syncReducers,
   music:musicReducer,
   vedio:vedioReducer,
-  playlist:playlistReducer
+  playlist:playlistReducer,
+  artist:artistReducer
 }) 
 const store = createStore(rootReducer,applyMiddleware(...middlewares));
 

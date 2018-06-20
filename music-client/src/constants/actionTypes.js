@@ -48,5 +48,12 @@ export default {
     playList:{
         PLAYLIST_DETAIL:"PLAYLIST_DETAIL",
         PLAYLIST_COMMENT:"PLAYLIST_COMMENT"
+    },
+    artist:{
+        ARTIST_SURVERY:"ARTIST_SURVERY",
+        ARTIST_DESC:"ARTIST_DESC",
+        ARTIST_ALBUM:"ARTIST_ALBUM",
+        ARTIST_MV:"ARTIST_MV",
+        ARTIST_SIMILAR:"ARTIST_SIMILAR"
     }
 }

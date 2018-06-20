@@ -5,6 +5,7 @@ import actions from 'action/publicAction'
 import Music from './music'
 import Vedio from './vedio'
 import PlayList from './playlist'
+import Artist from './artist'
 let AppContainer=createContainer(App,"public",actions)
 let routes=[
     {
@@ -13,7 +14,7 @@ let routes=[
         routes:[
             {
                 path:"/music",
-                component:Music/* lazyLoader(() => import('./music')) */,
+                component:Music,
             },
             {
                 path:"/vedio",
@@ -21,6 +22,10 @@ let routes=[
             },{
                 path:"/playlist/:id",
                 component:PlayList
+            },
+            ,{
+                path:"/artist/:id",
+                component:Artist
             }
         ]
     }

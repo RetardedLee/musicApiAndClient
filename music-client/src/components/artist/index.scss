@@ -1,0 +1,97 @@
+@import "component/_theme.scss";
+.artist-detail{
+    padding:20px;
+    .rc-tabs-top{
+        border-bottom:0;
+    }
+    .artist-survery{
+        
+        .pic{
+            width:200px;
+            height:200px;
+            img{
+                width:100%;
+            }
+        }
+        .info{
+            margin-left:20px;
+            .alias{
+                font-size:14px;
+                margin-left:5px;
+                vertical-align: middle;
+                color:#999;
+            }
+            .type{
+                font-size:12px;
+                color:#fff;
+                background: #c62f2f;
+                padding:3px 6px;
+                border-radius: 3px;
+                font-family: monospace;
+                margin-right:5px;
+            }
+            .name{
+                font-size: 18px;
+                color:#333;
+                vertical-align: middle;
+            }
+            .count{
+                font-size: 12px;
+                font-family: monospace;
+                color:#333;
+                line-height: 20px;
+                .iconfont{
+                    color:#999;
+                    vertical-align: middle;
+                    font-size: 14px;
+                    margin-right:5px;
+                }
+                &:first-of-type{
+                    margin-top:20px;
+                }
+            }
+        }
+        @include flexBox($justify:flex-start,$align:flex-start);
+    }
+    .detail{
+        margin-top:20px;
+        .artist-album{
+            .album-list{
+                margin-top:20px;
+                .rec-item {
+                    overflow: hidden;
+      
+                    margin-right: 20px;
+                    margin-bottom: 15px;
+                    width:173px;
+                    height:173px;
+                    &:nth-child(4n){
+                        margin-right:0;
+                    }
+                }
+                img{width:150px;height:150px;}
+        
+                .relative{
+                    background: url("../../resource/coverall.png") no-repeat center right;
+                    position: relative;
+                    border: 1px solid #e1e1e2;
+                    background-size: 90% 120%;
+                }
+                @include flexBox($justify:flex-start,$wrap:wrap);
+                .desc{
+                    -webkit-box-orient: vertical;
+                    font-size:14px;
+                    color:#000;
+                    line-height:1.4;
+                    height:38px;
+                    margin-top:3px;
+                    font-family: monospace;
+                    font-size: 13px;
+                    @include text-overflow-ellipsis(2);
+                }
+            }
+
+        }
+        
+    }
+}

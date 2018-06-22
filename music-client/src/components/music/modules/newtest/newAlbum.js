@@ -9,7 +9,6 @@ export default class NewAlbum extends React.Component{
 
     render(){
         let{data}=this.props
-        
         return<div> 
         <ul className="album-list rec-list">{data.map((value,index)=>{
             return <li className="rec-item" key={value.id}>

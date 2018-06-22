@@ -24,7 +24,7 @@ import {formatNumber} from 'utils/numberUtil'
                     <span className="name">{props.data.name}</span>
                     </div>
                     <div className="creator">
-                        <Link to="/a">
+                        <Link to={`/user/${props.data.creator.userId}`}>
                             <img src={`${props.data.creator.avatarUrl}?param=30y30`} />
                             <span className="nickname">{props.data.creator.nickname}</span>
                             <span className="create-time">{moment(props.data.createTime).format("YYYY-MM-DD")}创建</span>

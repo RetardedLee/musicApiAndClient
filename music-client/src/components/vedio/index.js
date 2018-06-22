@@ -5,7 +5,7 @@ import actions from 'action/vedio'
 import config from './vedioCatConfig'
 import LoadingInfo from 'component/common/LoadingInfo'
 import InfiniteScroll from 'react-infinite-scroller'
-import VedioList from './vedioList'
+import VedioList from './modules/vedioList'
 import path from 'constants/apiPath'
 import "./index.scss"
 var qs = require('querystringify');

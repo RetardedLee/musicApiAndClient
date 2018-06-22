@@ -33,7 +33,7 @@ export const artistDescAction=(data)=>dispatch=>{
             }).then(response=>response.json())
             .then(body => {
                 var data={}
-                if (body.code == 200 && body.mvs) {
+                if (body.code == 200) {
                         if(body.briefDesc){
                             data["briefDesc"]=body.briefDesc
                         }

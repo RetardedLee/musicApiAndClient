@@ -69,7 +69,7 @@
                         margin-right:0;
                     }
                 }
-                img{width:150px;height:150px;}
+                img{width:150px;height:150px;display: block;}
         
                 .relative{
                     background: url("../../resource/coverall.png") no-repeat center right;
@@ -93,5 +93,86 @@
 
         }
         
+    }
+    .artist-mv{
+        margin-top:20px;
+        .vedio-list{
+            @include flexBox($wrap:wrap,$justify:flex-start,$align:flex-start);
+            .rec-item{
+                width: 175px;
+                margin-right: 15px;
+                overflow: hidden;
+                margin-bottom: 20px;
+                img{
+                    width:175px;
+                    height:100px;
+                }
+                &:nth-child(4n){
+                    margin-right:0;
+                }
+                img{
+                    width: 100%;
+                    display: block;
+
+                }
+                .listens{
+                    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.7));
+                    position: absolute;
+                    width: 100%;
+                    padding: 5px;
+                    text-align: right;
+                    top: 0;
+                    left: 0;
+                    color: #fff;
+                    font-size: 12px;
+                }
+                .desc {
+                    width: 230px;
+                    overflow: hidden;
+                    -o-text-overflow: ellipsis;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    color: #333;
+                    font-size: 12px;
+                    font-family: monospace;
+                    margin-top: 10px;
+                }    
+            }
+            .relative{
+                position: relative;
+            }
+        }
+    }
+    .artist-desc{
+        margin-top:20px;
+        .brief-desc{
+            font-size: 14px;
+            line-height: 1.6;
+            font-family: monospace;
+            color: #666;
+            
+                text-indent: 30px;
+            
+        }
+        .title{
+            color:#333;
+            font-size: 16px;
+            font-family: monospace;
+            font-weight: 700;
+            margin-top:20px;
+
+        }
+        .desc{
+            text-indent: 30px;
+            color:#666;
+            font-size: 14px;
+            font-family: monospace;
+            line-height: 1.5;
+            margin-top:15px;
+            p{
+                font-family: monospace;
+                margin-top:10px;
+            }
+        }
     }
 }

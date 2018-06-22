@@ -25,7 +25,19 @@ import ArtistAlbum from './modules/artistAlbum'
          this.props.artistAlbumAction({id:this.id,limit:20})
      }
      tabChange=(e)=>{
-         console.log(e)
+         if(e==="mv"){
+                this.props.artistMvAction({id:this.id})
+           
+         }else if(e==="detail"){
+        
+                this.props.artistDescAction({id:this.id})
+    
+           
+         }/* else if(e==="album"){
+            if(this.props.artist.artistAlbum.status !== 1){
+                this.props.artistAlbumAction({id:this.id})
+             }
+         } */
      }
     render(){
         let {state,props}=this

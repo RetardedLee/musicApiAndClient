@@ -1,8 +1,10 @@
 
 @import "component/_theme.scss";
 .vedio{
+    padding:14px;
+    overflow: hidden;
     .infinite{
-        height:485px;
+        height:458px;
         overflow: auto;
     }
     .vedio-list{
@@ -40,7 +42,7 @@
                         transition-property:transform;
                         transition-duration: .3s;
                     }
-                    .play{
+                    /* .play{
                         display:block;
                         &:hover{
                             .iconfont{
@@ -48,7 +50,7 @@
                                 transition:all .3s;
                             }
                         }
-                    }
+                    } */
                 }
             }
             .listens{

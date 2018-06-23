@@ -34,7 +34,11 @@ class App extends Component {
         let {props,state}=this
         return (
                 <div className = "music-app">
-                    <Header searchSuggest={props.public.searchSuggest} login={props.public.login} searchHandler={this.searchHandler} userInfoClick={this.userInfoClick}/>
+                    <Header 
+                        searchSuggest={props.public.searchSuggest} 
+                        login={props.public.login} 
+                        searchHandler={this.searchHandler} 
+                        userInfoClick={this.userInfoClick}/>
                     <Menu login={props.public.login}/>
                     <div className="app-main">
                         {renderRoutes(props.route.routes)}

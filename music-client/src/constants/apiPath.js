@@ -53,6 +53,6 @@ export default{
     },
     album:{
         albumDetail:`${DOMAIN}/album/detail`,
-        albumComment:`${DOMAIN}/artist/similar`
+        albumComment:`${DOMAIN}/album/comment`
     }
 }

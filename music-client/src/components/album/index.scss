@@ -1,0 +1,271 @@
+@import "component/_theme.scss";
+.album-detail{
+    padding:20px;
+    .rc-tabs-top {
+        border-bottom: none;
+    }
+    .survery{
+        @include flexBox($align:flex-start,$justify:flex-satrt);
+        .pic{
+            width:200px;
+            background: url("../../resource/coverall.png") no-repeat center right;
+            background-size:70% 93%; 
+            img{
+                display: block;
+                width:180px;
+            }
+        }
+        .info{
+            margin-left: 20px;
+            .type{
+                font-size: 12px;
+                color: #fff;
+                background: #c62f2f;
+                padding: 3px 6px;
+                border-radius: 3px;
+                margin-right: 5px;
+            }
+            .name {
+                font-size: 18px;
+                color: #333;
+                vertical-align: middle;
+            }
+            .count {
+                font-size: 12px;
+                color: #333;
+                line-height: 20px;
+                &:first-of-type {
+                    margin-top: 20px;
+                }
+            }
+            .play-all {
+                /* height: 40px; */
+                margin-top: 10px;
+                background: #c62f2f;
+                width: 120px;
+                height: 30px;
+                line-height: 30px;
+                border-radius: 5px;
+                color: #fff;
+                font-size: 14px;
+                overflow: hidden;
+                .iconfont {
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+                .play {
+                    display: inline-block;
+                    width: 90px;
+                    height: 30px;
+                    cursor: pointer;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                    font-size: 14px;
+                    &:hover {
+                        background: #b12323;
+                    }
+                }
+                
+                .add {
+                    font-size: 20px;
+                    display: inline-block;
+                    width: 30px;
+                    text-align: center;
+                    line-height: 30px;
+                    vertical-align: -1px;
+                    border-left: 1px solid #b83838;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                   &:hover {
+                        background: #b12323;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .song-list{
+        margin-top:20px;
+        .list-table{
+            font-family: monospace;
+            font-size: 12px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            p{
+                padding:10px 5px;
+
+            }
+            .key{
+                width:50px;
+               
+
+            }
+            .opr{
+               
+            }
+            .name{
+               width:270px;
+                @include text-overflow-ellipsis();
+                color:#000;
+                font-family: monospace;
+               
+            }
+            .artist{
+                width:180px;
+                @include text-overflow-ellipsis();
+                
+                a{
+                    color:#0a63a8;
+                    margin-left:5px;
+                    font-family: monospace;
+                }
+               
+            }
+            .album{
+                width:180px;
+                @include text-overflow-ellipsis();
+                a{
+                    font-family: monospace;
+                }
+                
+               
+            }
+            .hot{
+                width:120px;
+                .progress{
+                    background-image:linear-gradient(to right,#fff,rgba(206, 17, 38,.7)); 
+                    height:10px;
+                    padding:0;
+                }
+            }
+            .dura{
+                width:100px;
+            }
+            
+            tr{
+                cursor: pointer;
+              &:nth-child(even){
+                  background: #f5f5f5;
+              }
+              &:hover{
+                  background: #ebeced;
+
+              }  
+            }
+            th{
+                border:1px solid #e1e1e2;
+                font-family: monospace;
+                color:#666;
+                &:first-child{
+                    border-left:none;
+                }
+                &:last-child{
+                    border-right:none;
+                }
+               
+            }
+        }
+    }
+    .album-detail{
+        h3{
+            color: #333;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: monospace;
+            margin-bottom:20px;
+        }
+        p{
+            text-indent: 30px;
+            line-height: 1.6;
+        }
+    }
+    .comment{
+        width:100%;
+
+        .rc-pagination-item-active{
+            background-color:transparent;
+            border-color:transparent;
+            
+        }
+     .rc-pagination-item-active a{
+            color:#c20c0c;
+        }
+        .rc-pagination-item:hover{
+            border-color:transparent;
+            background: none;
+        }
+        .rc-pagination-item:hover{
+            border: 1px solid #d9d9d9;
+            background-color: #fff;
+        }
+        .rc-pagination-item-active:hover a{
+            color:#fff;
+        }
+        .rc-pagination {
+            text-align: right;
+        }
+        .title{
+            width:860px;
+            margin-left:60px;
+            margin-top:40px;
+            height:33px;
+            font-size:20px;
+            border-bottom: 2px solid #c20c0c;
+            .sub{
+                color:#666;
+                font-size: 14px;
+            }
+        }
+        .sub-title{
+            height: 25px;
+            border-bottom: 1px solid #e1e1e2;
+            color:#000;
+            font-size: 14px;
+            margin-top:15px;
+            margin-bottom:15px;
+        }
+        .comment-list{
+
+            overflow: hidden;
+            .comment-item{
+               
+                line-height: 1.4;
+                padding:10px 0;
+                @include flexBox($justify:flex-start,$align:flex-start);
+                border-bottom:1px solid #e1e1e2;
+                img{
+                    border-radius: 50%;
+                }
+                .user-link{
+                    color:rgb(10,99,168);
+                }
+                .detail{
+                    width:815px;
+                    .con{
+                        img{
+                            vertical-align: middle;
+                        }
+                    }
+                    margin-left:10px;
+                    font-size:12px;
+                    margin-top:0;
+                    P:last-child{
+                        margin-top:5px;
+                        color:#999;
+                        width:100%;
+                    }
+                    .pub-time{
+                        width:500px;
+                        @include flexBox($justify:space-between);
+                    }
+                    .rep{
+                        background: rgb(241,241,241);
+                        line-height: 1.4;
+                        margin-top: 10px;
+                        padding:10px;
+                    }
+                }
+            }
+        }
+    }
+}

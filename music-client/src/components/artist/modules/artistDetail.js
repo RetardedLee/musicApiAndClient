@@ -16,7 +16,7 @@ export default class ArtistDetail extends React.Component{
                     return <li key={`item-${index}`} className="item">
                         <h3 className="title">{item.ti}</h3>
                         <div className="desc">{item.txt.split("\n").map((v,i)=>{
-                            return <p key={`${index}-${v}`}>{v}</p>
+                            return <p key={`${index}-${i}`}>{v}</p>
                         })}</div>
                     </li>
                 })}

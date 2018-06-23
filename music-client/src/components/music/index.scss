@@ -26,7 +26,10 @@ $list-margin:20px;
     background: $bgColor;
 }
 .rc-tabs-top{
-    border-bottom:none;
+	border-bottom:none;
+	div{
+		font-family: monospace;
+	}
 }
 .swiper-slide{
     height:170px;
@@ -481,6 +484,9 @@ $list-margin:20px;
 		}
 		.ant-radio-button-wrapper{
 			font-size: 12px;
+			span{
+				font-family: monospace;
+			}
 		}
 	}
 	.rec-list{

@@ -161,6 +161,9 @@
     background: #fff;
     padding: 0 15px;
     position: relative;
+    span{
+      font-family: monospace;
+    }
   }
   .ant-radio-button-wrapper a {
     color: rgba(0, 0, 0, 0.65);

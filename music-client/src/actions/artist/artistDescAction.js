@@ -37,21 +37,34 @@ export const artistDescAction=(data)=>dispatch=>{
                         if(body.briefDesc){
                             data["briefDesc"]=body.briefDesc
                         }
-                        if(body.introduction){
+                        if(body.introduction.length){
                             data["introduction"]=body.introduction
                         }
                         if(body.topicData){
                             data["topicData"]=body.topicData
                         }
-                        dispatch({
-                            payload: {
-                                content: {
-                                    data,
+                        if(body.introduction.length){
+                            dispatch({
+                                payload: {
+                                    content: {
+                                        data,
+                                    },
+                                    status: 1
                                 },
-                                status: 1
-                            },
-                            type
-                        })
+                                type
+                            })
+                        }else{
+                            dispatch({
+                                payload: {
+                                    content: {
+                                        data,
+                                    },
+                                    status: -1
+                                },
+                                type
+                            })
+                        }
+                        
                 
                     
                 } else {

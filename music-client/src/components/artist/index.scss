@@ -125,6 +125,10 @@
                     left: 0;
                     color: #fff;
                     font-size: 12px;
+                    .iconfont{
+                        vertical-align: -2px;
+                        margin-right:3px;
+                    }
                 }
                 .desc {
                     width: 230px;
@@ -167,11 +171,12 @@
             color:#666;
             font-size: 14px;
             font-family: monospace;
-            line-height: 1.5;
+            line-height: 1.6;
             margin-top:15px;
             p{
                 font-family: monospace;
                 margin-top:10px;
+
             }
         }
     }

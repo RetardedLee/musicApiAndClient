@@ -5,12 +5,12 @@ import defaultImg from 'static/defaultAva.jpg'
 export default class VedioList extends React.Component{
     mouseEnter=(item,e)=>{
         if(item.previewUrl){
-            e.target.src=item.previewUrl
+            e.target.src=`${item.previewUrl}`
         }
        
     }
     moustLeave=(item,e)=>{
-        e.target.src=item.coverUrl
+        e.target.src=`${item.coverUrl}?param=230y130`
     }
     render(){
         let{data}=this.props

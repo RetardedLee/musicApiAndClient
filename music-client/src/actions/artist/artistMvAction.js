@@ -32,20 +32,27 @@ export const artistMvAction=(data)=>dispatch=>{
                 }
             }).then(response=>response.json())
             .then(body => {
-                if (body.code == 200 && body.mvs) {
-                 
-                        dispatch({
-                            payload: {
-                                content: {
-                                    data:body.mvs,
-                                    hasmore:body.hasMore
-                                },
-                                status: 1
+                if (body.code == 200) {
+                 if(body.mvs.length){
+                    dispatch({
+                        payload: {
+                            content: {
+                                data:body.mvs,
+                                hasmore:body.hasMore
                             },
-                            type
-                        })
-                
-                    
+                            status: 1
+                        },
+                        type
+                    })
+                 }else{
+                    dispatch({payload:{
+                        content:{
+                            data:[],
+                            hasmore:false
+                        },
+                        status:-1
+                    },type})
+                 }    
                 } else {
                     dispatch({payload:{
                         content:{

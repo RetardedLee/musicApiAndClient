@@ -47,6 +47,9 @@
             box-shadow: 0 4px 7px #555;
             text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
             z-index:10000;
+            li,a,div,p,span,em{
+                font-family: monospace;
+            }
             .item{
                 display: flex;
                 .iconfont{

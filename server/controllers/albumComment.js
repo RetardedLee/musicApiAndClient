@@ -9,6 +9,6 @@ function albumComment(req, res, next) {
         rid: id,
         limit: req.query.limit || 20,
     }
-    sendRequest(`${cloudPath.albumComment}/${id}`, data, req, res)
+    sendRequest(`${cloudPath.albumComment}${id}`, data, req, res)
 }
 module.exports = albumComment

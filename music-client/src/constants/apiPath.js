@@ -1,4 +1,4 @@
-const DOMAIN="http://localhost:3000"
+const DOMAIN="http://t21160v763.51mypc.cn:58383"
 export default{
     public:{
         searchSuggest:`${DOMAIN}/search/suggest`,
@@ -50,5 +50,9 @@ export default{
         artistMv:`${DOMAIN}/artist/mv`,
         artistDesc:`${DOMAIN}/artist/desc`,
         artistSimilar:`${DOMAIN}/artist/similar`,
+    },
+    album:{
+        albumDetail:`${DOMAIN}/album/detail`,
+        albumComment:`${DOMAIN}/artist/similar`
     }
 }

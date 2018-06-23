@@ -55,5 +55,10 @@ export default {
         ARTIST_ALBUM:"ARTIST_ALBUM",
         ARTIST_MV:"ARTIST_MV",
         ARTIST_SIMILAR:"ARTIST_SIMILAR"
+    },
+    album:{
+        ALBUM_DETAIL:"ALBUM_DETAIL",
+        ALBUM_COMMENT:"ALBUM_COMMENT",
+        ALBUM_SONG:"ALBUM_SONG"
     }
 }

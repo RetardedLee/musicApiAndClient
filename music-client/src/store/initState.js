@@ -149,5 +149,19 @@ export default{
             content:null,
             status:0
         }
+    },
+    album:{
+        albumDetail:{
+            content:null,
+            status:0
+        },
+        albumComment:{
+            content:null,
+            status:0
+        },
+        albumSong:{
+            content:[],
+            status:0
+        }
     }
 }

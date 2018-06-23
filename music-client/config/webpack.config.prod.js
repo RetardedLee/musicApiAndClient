@@ -135,7 +135,7 @@ module.exports = {
                         },
                     },
                     {
-                        test: /\.css$/,
+                        test: /\.(css|scss)$/,
                         loader: ExtractTextPlugin.extract(
                             Object.assign({
                                     fallback: {
@@ -172,6 +172,9 @@ module.exports = {
                                                 ],
                                             },
                                         },
+                                        {
+                                            loader:require.resolve('sass-loader')
+                                        }
                                     ],
                                 },
                                 extractTextPluginOptions

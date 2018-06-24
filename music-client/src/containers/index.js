@@ -7,6 +7,7 @@ import Vedio from './vedio'
 import PlayList from './playlist'
 import Artist from './artist'
 import Album from './album'
+import User from './user'
 let AppContainer=createContainer(App,"public",actions)
 let routes=[
     {
@@ -31,6 +32,10 @@ let routes=[
             {
                 path:"/album/:id",
                 component:Album
+            },
+            {
+                path:"/user/:id",
+                component:User
             }
         ]
     }

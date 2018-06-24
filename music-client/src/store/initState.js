@@ -163,5 +163,19 @@ export default{
             content:[],
             status:0
         }
+    },
+    user:{
+        userPlaylist:{
+            content:null,
+            status:0
+        },
+        userSubscribe:{
+            content:null,
+            status:0
+        },
+        userSurvery:{
+            content:null,
+            status:0
+        }
     }
 }

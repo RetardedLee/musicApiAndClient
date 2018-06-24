@@ -7,6 +7,7 @@ import vedioReducer from 'reducer/vedio'
 import playlistReducer from 'reducer/playlist'
 import artistReducer from 'reducer/artist'
 import albumReducer from 'reducer/album'
+import userReducer from 'reducer/user'
 const middlewares = [thunk];
 
 if (process.env.NODE_ENV === `development`) {
@@ -20,7 +21,8 @@ const rootReducer=combineReducers({
           vedio:vedioReducer,
           playlist:playlistReducer,
           artist:artistReducer,
-          album:albumReducer
+          album:albumReducer,
+          user:userReducer
 }) 
 const store = createStore(rootReducer,applyMiddleware(...middlewares));
 

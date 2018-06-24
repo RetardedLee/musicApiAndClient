@@ -60,5 +60,10 @@ export default {
         ALBUM_DETAIL:"ALBUM_DETAIL",
         ALBUM_COMMENT:"ALBUM_COMMENT",
         ALBUM_SONG:"ALBUM_SONG"
+    },
+    user:{
+        USER_SURVERY:"USER_SURVERY",
+        USER_SUBSCRIBE:"USER_SUBSCRIBE",
+        USER_PLAYLIST:"USER_PLAYLIST"
     }
 }

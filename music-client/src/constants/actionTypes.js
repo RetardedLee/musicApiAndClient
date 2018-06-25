@@ -38,12 +38,7 @@ export default {
         }
     },
     vedio:{
-        vedio:{
-
-        },
-        mv:{
-            
-        }
+        VEDIO_LIST:"VEDIO_LIST"
     },
     playList:{
         PLAYLIST_DETAIL:"PLAYLIST_DETAIL",

@@ -1,94 +1,46 @@
 import React from 'react'
-import Radio from 'component/common/radio'
 import createContainer from 'utils/createContainer'
 import actions from 'action/vedio'
-import config from './vedioCatConfig'
 import LoadingInfo from 'component/common/LoadingInfo'
 import InfiniteScroll from 'react-infinite-scroller'
 import VedioList from './modules/vedioList'
 import path from 'constants/apiPath'
 import "./index.scss"
 var qs = require('querystringify');
-const Group=Radio.Group
-const Button=Radio.Button
+
 class Vedio extends React.Component{
     constructor(props){
         super(props)
-        this.state={
+        this.data={
             data:[],
-            page:0,
-            cat:"5100",
-            more:true
+            hasMore:true
         }
     }
     componentDidMount(){
-        this.getData("5100",0)
-    }
-    getData=(cat,page)=>{
-        
-        let query=qs.stringify({
-            cat,
-            page
-        },true)
-        fetch(`${path.vedio.vedioList}${query}`,{
-            credentials: 'include',
-            method: "GET",
-            cache: "no-cache",
-            mode: "cors"
-        }).then(response=>{
-            if (response.status >= 200 && response.status < 300) {
-                return response
-            } else {
-                this.setState({data:[],more:false})
-                var error = new Error(response.statusText)
-                error.response = response
-                throw error
-            }
-        }).then(response=>response.json()).then((json)=>{
-            let {state}=this
-            if(json.code===200){
-                this.setState({
-                    data:state.data.concat(json.datas),
-                    more:json.hasmore
-                })
-            }
-        })
-    }
-    catChange=(e)=>{
-        var cat=e.target.value
-        this.setState({cat,page:0,data:[]},()=>{
-            this.getData(cat,0)
-        })
+        let th=this
+        this.props.vedioListAction({offset:0,limit:20})
     }
     loadFunc=(e)=>{
-        this.getData(this.state.cat,e)
+        this.props.vedioListAction({offset:e*20,limit:20})
     }
     render(){
         let {state,props}=this
+        this.data.data=this.data.data.concat(props.vedio.vedioList.content.data)
+        this.data.hasMore=props.vedio.vedioList.content.hasMore
         return <div className="vedio">
-        <h2 style={{marginTop:15,textAlign:"center",marginBottom:15}}><Group defaultValue={config[0].dataKey} onChange={this.catChange}>
-            {config.map((v,k)=>{
-                return <Button 
-                value={v.dataKey} 
-                key={v.dataKey}>
-                    {v.title}
-           </Button>
-            })}
-        </Group>
-        </h2>
         <div className="infinite">
-        {state.data.length===0?null:<InfiniteScroll
+        <InfiniteScroll
                 loadMore={this.loadFunc}
-                hasMore={state.more}
+                hasMore={this.data.hasMore}
                 loader={<LoadingInfo status={0} key={"infinite"} height={50}/>}
                 initialLoad={true}
                 useWindow={false}
                 pageStart={0}
                 threshold={50}
             >
-                <VedioList data={state.data} key={"in"}/>
+                <VedioList data={this.data.data} />
             </InfiniteScroll>
-            }
+
         </div>
         </div>
     }

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import aReducer from './aReducer'
+import vedioList from './vedioListReducer'
 export default combineReducers({
-    aReducer
+    vedioList
 })

@@ -1,9 +1,9 @@
 import types from 'constants/actionTypes'
 import initState from 'store/initState';
-const allTag=(init="1",action)=>{
-    if(action.type=="A"){
+const vedioList=(init=initState.vedio.vedioList,action)=>{
+    if(action.type==types.vedio.VEDIO_LIST){
         return action.payload
     }
     return init;
 }
-export default allTag
+export default vedioList

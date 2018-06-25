@@ -38,7 +38,7 @@ export default{
         
     },
     vedio:{
-        vedioList:`${DOMAIN}/vedio/catlist`
+        vedioList:`${DOMAIN}/top/mv`
     },
     playList:{
         playListDetail:`${DOMAIN}/playlist/detail`,

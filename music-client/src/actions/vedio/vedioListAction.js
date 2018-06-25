@@ -7,7 +7,10 @@ export const vedioListAction=(data)=>dispatch=>{
         dispatch({
             type,
             payload: {
-                content: null,
+                content: {
+                data:[],
+                hasMore:false
+                },
                 status: 0
             }
         })
@@ -21,7 +24,10 @@ export const vedioListAction=(data)=>dispatch=>{
                     return response
                 }else{
                     dispatch({payload:{
-                        content:null,
+                        content:{
+                            data:[],
+                            hasMore:false
+                        },
                         status:-5
                     },type})
                     throw new Error("fetch error")
@@ -29,11 +35,14 @@ export const vedioListAction=(data)=>dispatch=>{
                 }
             }).then(response=>response.json())
             .then(body => {
-                if (body.code == 200 && !body.nolyric && body.lrc.lyric) {
+                if (body.code == 200 && body.data) {
                  
                         dispatch({
                             payload: {
-                                content: body.lrc.lyric,
+                                content: {
+                                    data:body.data,
+                                    hasMore:body.hasMore
+                                },
                                 status: 1
                             },
                             type
@@ -43,7 +52,10 @@ export const vedioListAction=(data)=>dispatch=>{
                 } else {
                      dispatch({
                         payload: {
-                            content: null,
+                            content: {
+                                data:[],
+                                hasMore:false
+                            },
                             status: -1
                         },
                         type

@@ -103,11 +103,12 @@ export default{
         
     },
     vedio:{
-        vedio:{
-
-        },
-        mv:{
-            
+        vedioList:{
+            content:{
+                data:[],
+                hasMore:false
+            },
+            status:0
         }
     },
     playList:{

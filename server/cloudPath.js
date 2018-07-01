@@ -76,6 +76,8 @@ module.exports = {
     mvDetail: "/weapi/mv/detail",
     //mv评论
     mvComment: "/weapi/v1/resource/comments/R_MV_5_",
+    //视频评论
+    vedioComment:"/weapi/v1/resource/comments/R_VI_62_",
     // 手机登录
     loginMobi: "/weapi/login/cellphone",
     //邮箱登录
@@ -130,7 +132,9 @@ module.exports = {
     // 视频分类
     vedioCat:"https://interface.music.163.com/eapi/cloudvideo/category/list",
     // 相关推荐mv
-    relativeMv:"/weapi/cloudvideo/v1/allvideo/rcmd"
+    relativeMv:"/weapi/cloudvideo/v1/allvideo/rcmd",
+    vedioDetail:"/weapi/cloudvideo/v1/video/detail"
+    
 }
 
 /* 

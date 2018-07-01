@@ -33,7 +33,7 @@ const mvFirst = require("./controllers/mvFirst.js")
 const similarUser = require("./controllers/similarUser.js")
 const loginMobi = require("./controllers/loginMobi.js")
 const musicComment = require("./controllers/musicComment.js")
-const mvComment = require("./controllers/mvComment.js")
+const vedioComment = require("./controllers/vedioComment.js")
 const albumComment = require("./controllers/albumComment.js")
 const loginEmail = require("./controllers/loginEmail.js")
 const artistSub = require("./controllers/artistSub.js")
@@ -65,6 +65,7 @@ const vedioCatList=require("./controllers/vedioCatList")
 const mvDetali =require("./controllers/mvDetail")
 const playlistDetail=require("./controllers/playListDetail")
 const relativeMv =require("./controllers/relativeMv")
+const vedioDetail=require("./controllers/vedioDetail")
 log4js.configure({
     appenders: { out: { type: 'stdout', layout: { type: 'coloured' } } },
     categories: { default: { appenders: ['out'], level: 'info' } }
@@ -114,7 +115,7 @@ app.get("/album/detail",albumDetail);
 app.get("/album/comment",albumComment);
 app.get("/artist/list",artistList);
 app.get("/mv/first",mvFirst);
-app.get("/mv/comment",mvComment);
+app.get("/vedio/comment",vedioComment);
 app.get("/login/mobi",loginMobi);
 app.get("/login/email",loginEmail);
 app.get("/like/get",likeList);
@@ -135,7 +136,7 @@ app.get("/playlist/list",getPlayList)
 app.get("/new/album",newAblum)
 app.get("/vedio/cat",vedioCat)
 app.get("/vedio/catlist",vedioCatList)
-app.get("/mv/detail",mvDetali)
+app.get("/vedio/detail",vedioDetail)
 app.get("/playlist/detail",playlistDetail)
 app.get("/mv/relative",relativeMv)
 var port = config.port || 3000

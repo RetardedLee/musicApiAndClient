@@ -38,7 +38,9 @@ export default{
         
     },
     vedio:{
-        vedioList:`${DOMAIN}/vedio/catlist`
+        vedioList:`${DOMAIN}/vedio/catlist`,
+        vedioComment:`${DOMAIN}/vedio/comment`,
+        vedioDetail:`${DOMAIN}/vedio/detail`
     },
     playList:{
         playListDetail:`${DOMAIN}/playlist/detail`,

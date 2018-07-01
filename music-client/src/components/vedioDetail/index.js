@@ -8,7 +8,7 @@ import actions from 'action/vedioDetail'
         this.id=props.match.params.id
     }
     componentDidMount(){
-        this.props.vedioDetailAction({mvid:this.id})
+        this.props.vedioDetailAction({id:this.id})
         this.props.vedioCommentAction({id:this.id})
     }
     render(){

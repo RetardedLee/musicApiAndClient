@@ -9,6 +9,6 @@ function mvComment(req, res, next) {
         rid: albumid,
         limit: req.query.limit || 20,
     }
-    sendRequest(`${cloudPath.mvComment}${albumid}`, data, req, res)
+    sendRequest(`${cloudPath.vedioComment}${albumid}`, data, req, res)
 }
 module.exports = mvComment

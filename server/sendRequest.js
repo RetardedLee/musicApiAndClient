@@ -30,7 +30,7 @@ function sendRequest(path, data, requestByClient, responseByNode, succCallback, 
         })
     };
     request(options, function(error, res, body) {
-
+        console.log(res)
         if (error) {
             responseByNode.status({
                 status: 500,

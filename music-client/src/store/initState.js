@@ -103,11 +103,12 @@ export default{
         
     },
     vedio:{
-        vedio:{
-
-        },
-        mv:{
-            
+        vedioList:{
+            content:{
+                data:[],
+                hasMore:false
+            },
+            status:0
         }
     },
     playList:{
@@ -161,6 +162,30 @@ export default{
         },
         albumSong:{
             content:[],
+            status:0
+        }
+    },
+    user:{
+        userPlaylist:{
+            content:null,
+            status:0
+        },
+        userSubscribe:{
+            content:null,
+            status:0
+        },
+        userSurvery:{
+            content:null,
+            status:0
+        }
+    },
+    vedioPlay:{
+        vedioDetail:{
+            content:null,
+            status:0
+        },
+        vedioComment:{
+            content:null,
             status:0
         }
     }

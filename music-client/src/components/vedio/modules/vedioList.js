@@ -14,9 +14,10 @@ export default class VedioList extends React.Component{
     }
     render(){
         let{data}=this.props
-        
+        console.log(data)
         return <ul className="vedio-list rec-list">{data.map((value,index)=>{
-            return value.data.creator?<li className="rec-item" key={value.data.vid+Math.random()}>
+            console.log(value)
+            return <li className="rec-item" key={value.data.vid+Math.random()}>
             <Link to={`/vedio/${value.data.vid}`} className="block">
                 <p className="relative" onMouseEnter={this.mouseEnter.bind(this,value.data)} onMouseLeave={this.moustLeave.bind(this,value.data)}><img src={`${value.data.coverUrl}?param=230y130`} onError={(e)=>{e.target.src=defaultImg}}/>
                 <span className="listens"><i className="iconfont icon-shipin1"></i>{formatNumber(value.data.playTime)}</span>
@@ -25,7 +26,7 @@ export default class VedioList extends React.Component{
                 <p className="desc" title={value.data.title}>{value.data.title}</p>
                 <div className="creator"><small>{`by `}</small>{value.data.creator?value.data.creator.nickname:"未知"}</div>
             </Link>
-        </li> : null   
+        </li>  
         })}</ul>
     }
 }

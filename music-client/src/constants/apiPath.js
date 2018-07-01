@@ -1,4 +1,4 @@
-const DOMAIN="http://t21160v763.51mypc.cn:58383"
+const DOMAIN="http://localhost:3000"
 export default{
     public:{
         searchSuggest:`${DOMAIN}/search/suggest`,

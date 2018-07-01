@@ -1,11 +1,11 @@
-// mvDetail
+// vedioDetail
 var sendRequest = require('../sendRequest.js')
 const cloudPath = require("../cloudPath.js")
 
 function mvDetail(req, res, next) {
-    const mvid = req.query.mvid
+    const id = req.query.id
     const data = {
-        id: mvid
+        id: id
     }
     sendRequest(cloudPath.mvDetail, data, req, res,(body)=>{
         console.log(body)

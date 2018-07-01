@@ -7,6 +7,8 @@ import Vedio from './vedio'
 import PlayList from './playlist'
 import Artist from './artist'
 import Album from './album'
+import User from './user'
+import VedioPlayer from './vedioPlayer'
 let AppContainer=createContainer(App,"public",actions)
 let routes=[
     {
@@ -19,7 +21,8 @@ let routes=[
             },
             {
                 path:"/vedio",
-                component:Vedio 
+                component:Vedio,
+                exact:true
             },{
                 path:"/playlist/:id",
                 component:PlayList
@@ -31,6 +34,14 @@ let routes=[
             {
                 path:"/album/:id",
                 component:Album
+            },
+            {
+                path:"/user/:id",
+                component:User
+            },
+            {
+                path:"/vedio/:id",
+                component:VedioPlayer
             }
         ]
     }

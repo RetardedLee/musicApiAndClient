@@ -4,7 +4,7 @@ const util=require("../util.js")
 function banner(req, res, next) {
     const cookie = req.get('Cookie') ? req.get('Cookie') : ''
     const options = {
-        url: "http://music.163.com/discover",
+        url: "http://music.163.com/api/v2/banner/get",
         method: "GET",
         headers: {
             Referer: "http://music.163.com",
@@ -17,13 +17,13 @@ function banner(req, res, next) {
         if (error) {
             res.status(502).json({content:null,code:500});
         } else {
-            try {
+            res.json(JSON.parse(response.body));
+            
+            /* try {
                 const bannerPattern = /<script[^>]*>\s*window\.Gbanners\s*=\s*([^;]+?);\s*<\/script>/g;
                 const banners = eval(bannerPattern.exec(body)[1]);
                 const $=cheerio.load(body)
                 eval($("script")["0"].children[0].data.split("window.NEJ_CONF")[0])
-                
-                console.log(banners)
                 if(util.isEmptyObject(GUser)){
                     res.json({code:200,banners:banners,userInfo:null});    
                 }else{
@@ -31,7 +31,7 @@ function banner(req, res, next) {
                 }
             } catch (error) {
                 res.status(500).send({code:500,content:null});
-            }
+            } */
         }
     });
 }

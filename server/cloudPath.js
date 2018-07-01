@@ -128,7 +128,9 @@ module.exports = {
     // 新碟上架
     newAlbum:"/weapi/album/new",
     // 视频分类
-    vedioCat:"https://interface.music.163.com/eapi/cloudvideo/category/list"
+    vedioCat:"https://interface.music.163.com/eapi/cloudvideo/category/list",
+    // 相关推荐mv
+    relativeMv:"/weapi/cloudvideo/v1/allvideo/rcmd"
 }
 
 /* 

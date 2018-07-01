@@ -7,8 +7,7 @@ function musicComment(req, res, next) {
     const data = {
         offset: req.query.offset || 0,
         rid: rid,
-        limit: req.query.limit || 20,
-        csrf_token: ""
+        limit: req.query.limit || 20
     };
     sendRequest(`${cloudPath.musicComment}${rid}`, data, req, res)
 }

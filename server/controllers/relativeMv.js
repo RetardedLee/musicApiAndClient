@@ -6,7 +6,7 @@ const cloudPath = require("../cloudPath.js")
 function relativeMv(req, res, next) {
     const data = {
         id:req.query.id,
-        type:0
+        type:req.query.type
     }
     sendRequest(cloudPath.relativeMv, data, req, res, (body) => {})
 }

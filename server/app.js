@@ -66,6 +66,7 @@ const mvDetali =require("./controllers/mvDetail")
 const playlistDetail=require("./controllers/playListDetail")
 const relativeMv =require("./controllers/relativeMv")
 const vedioDetail=require("./controllers/vedioDetail")
+const vedioUrl=require("./controllers/vedioUrl")
 log4js.configure({
     appenders: { out: { type: 'stdout', layout: { type: 'coloured' } } },
     categories: { default: { appenders: ['out'], level: 'info' } }
@@ -139,6 +140,7 @@ app.get("/vedio/catlist",vedioCatList)
 app.get("/vedio/detail",vedioDetail)
 app.get("/playlist/detail",playlistDetail)
 app.get("/mv/relative",relativeMv)
+app.get("/vedio/url",vedioUrl)
 var port = config.port || 3000
 app.listen(port, (server) => {
     console.info(`服务启动......端口：${port}  当前时间${new Date().toTimeString()}`)

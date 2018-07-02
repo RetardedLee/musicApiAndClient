@@ -8,7 +8,6 @@ function vedioDetail(req, res, next) {
         id: id
     }
     sendRequest(cloudPath.vedioDetail, data, req, res,(body)=>{
-        console.log(body)
     })
 }
 module.exports = vedioDetail

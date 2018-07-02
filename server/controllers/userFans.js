@@ -7,8 +7,7 @@ function userFans(req, res, next) {
     const id = req.query.uid
     const data = {
         time: -1,
-        getcounts: true,
-        csrf_token: ''
+        getcounts: true
     }
     sendRequest(`${cloudPath.useruserFansEvent}${id}`, data, req, res)
 }

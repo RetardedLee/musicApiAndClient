@@ -69,10 +69,10 @@ class Vedio extends React.Component{
         <h2 style={{marginTop:15,textAlign:"center",marginBottom:15}}><Group defaultValue={config[0].dataKey} onChange={this.catChange}>
             {config.map((v,k)=>{
                 return <Button 
-                value={v.dataKey} 
-                key={v.dataKey}>
-                    {v.title}
-           </Button>
+                    value={v.dataKey} 
+                    key={v.dataKey}>
+                        {v.title}
+                    </Button>
             })}
         </Group>
         </h2>
@@ -84,7 +84,7 @@ class Vedio extends React.Component{
                 initialLoad={true}
                 useWindow={false}
                 pageStart={0}
-                threshold={50}
+                threshold={100}
             >
                 <VedioList data={state.data} key={"in"}/>
             </InfiniteScroll>

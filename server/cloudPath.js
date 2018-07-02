@@ -133,7 +133,8 @@ module.exports = {
     vedioCat:"https://interface.music.163.com/eapi/cloudvideo/category/list",
     // 相关推荐mv
     relativeMv:"/weapi/cloudvideo/v1/allvideo/rcmd",
-    vedioDetail:"/weapi/cloudvideo/v1/video/detail"
+    vedioDetail:"/weapi/cloudvideo/v1/video/detail",
+    vedioUrl:"/weapi/cloudvideo/playurl"
     
 }
 

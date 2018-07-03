@@ -187,6 +187,14 @@ export default{
         vedioComment:{
             content:null,
             status:0
+        },
+        vedioRelative:{
+            content:null,
+            status:0
+        },
+        vedioUrl:{
+            content:null,
+            status:0
         }
     }
 }

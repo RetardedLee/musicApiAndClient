@@ -11,13 +11,14 @@ import Player from './modules/player'
     componentDidMount(){
         this.props.vedioDetailAction({id:this.id})
         this.props.vedioCommentAction({id:this.id})
+        this.props.vedioRelativeAction({id:this.id,type:1})
+        this.props.vedioUrlAction({id:this.id,type:240})
     }
     render(){
 
         let {props,state}=this
-        console.log(props)
         return <div className="vedio-detail">
-            <Player data={props}/>
+            
         </div>
     }
 }

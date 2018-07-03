@@ -40,7 +40,9 @@ export default {
     vedio:{
         VEDIO_LIST:"VEDIO_LIST",
         VEDIO_DETAIL:"VEDIO_DETAIL",
-        VEDIO_COMMENT:"VEDIO_COMMENT"
+        VEDIO_COMMENT:"VEDIO_COMMENT",
+        VEDIO_URL:"VEDIO_URL",
+        VEDIO_RELATIVE:"VEDIO_RELATIVE"
     },
     playList:{
         PLAYLIST_DETAIL:"PLAYLIST_DETAIL",

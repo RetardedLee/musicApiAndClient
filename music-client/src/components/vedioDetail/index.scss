@@ -1,10 +1,21 @@
 @import "component/_theme.scss";
+/* autoprefixer: off */
+.state-playing input[pseudo="-webkit-media-controls-play-button" i], .state-playing input[pseudo="-webkit-media-controls-overlay-play-button" i]::-internal-media-controls-overlay-play-button-internal{
+    width:10px;
+    height:10px;
+}
+/* autoprefixer: on */
 .vedio-player{
     padding:15px;
     video{
         width:640px;
         height:360px;
         background: #000;
+        &::-webkit-media-controls:not(.audio-only) input[pseudo="-webkit-media-controls-timeline" i]::-webkit-slider-thumb {
+            box-shadow: unset;
+            background: #ccc;
+        }
+        
     }
     -webkit-media-controls-fullscreen-button{
         background: #000;

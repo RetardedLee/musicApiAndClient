@@ -29,7 +29,8 @@ export default{
         musicComment:{
             content:null,
             status:0
-        }
+        },
+        showMenu:true
         
     },
     music:{

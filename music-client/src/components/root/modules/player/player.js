@@ -203,8 +203,9 @@ export default class Player extends React.Component {
     let { state, props } = this;
     let th=this
     return (
+      props.show?
       <div className="app-player">
-      <video width="0" height="0"
+      <audio width="0" height="0"
           src={props.musicUrl.status===1?props.musicUrl.content[0].url:""}   
           onChange={this.srcChange} 
           onCanPlay={this.meteDataLoaded} 
@@ -216,7 +217,7 @@ export default class Player extends React.Component {
           onWaiting={this.onWaiting}
           onEnded={this.nextMusic}
       >
-      </video>
+      </audio>
         <div className="controls">
           <div className="control-play">
             <i title="上一首" className="iconfont icon-zhutishangyiqu" onClick={this.prevMusic}/>
@@ -332,7 +333,7 @@ export default class Player extends React.Component {
                 </div>
               </div>
         </div>:null}     
-      </div>
+      </div>:null
     )
   }
 }

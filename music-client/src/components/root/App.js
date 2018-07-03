@@ -39,11 +39,12 @@ class App extends Component {
                         login={props.public.login} 
                         searchHandler={this.searchHandler} 
                         userInfoClick={this.userInfoClick}/>
-                    <Menu login={props.public.login}/>
-                    <div className="app-main">
+                    <Menu login={props.public.login} show={props.public.showMenu}/>
+                    <div className="app-main" style={{width:props.public.showMenu?800:"auto"}}>
                         {renderRoutes(props.route.routes)}
                     </div>
-                    <Player 
+                    <Player
+                        show={props.public.showMenu} 
                         musicUrl={props.public.musicUrl} 
                         musicInfo={props.public.musicInfo} 
                         musicLyric={props.public.musicLyric} 

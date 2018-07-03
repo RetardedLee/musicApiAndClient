@@ -9,7 +9,8 @@ export default {
         MUSIC_URL:"MUSIC_URL",
         MUSIC_LYRIC:"MUSIC_LYRIC",
         MUSIC_INFO:"MUSIC_INFO",
-        MUSIC_COMMENT:"MUSIC_COMMENT"
+        MUSIC_COMMENT:"MUSIC_COMMENT",
+        SHOW_MENU:"SHOW_MENU"
     },
     music:{
         recommend:{

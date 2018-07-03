@@ -9,7 +9,7 @@ export default class Menu extends React.Component{
     render(){
         let {state,props}=this
         console.log(props)
-        return (<div className="app-menu">
+        return (props.show?<div className="app-menu">
                     <dl>
                         <dt>推荐</dt>
                         <dd><NavLink to="/music" activeStyle={activeStyle} className="nav-link"><i className="iconfont icon-gequguanli"></i>发现音乐</NavLink></dd>
@@ -26,6 +26,6 @@ export default class Menu extends React.Component{
                         
                         
                     </dl>
-            </div>)
+            </div>:null)
     }
 }

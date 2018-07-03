@@ -6,7 +6,8 @@ import {playListAction} from './playListAction'
 import {musicInfoAction} from './musicInfoAction'
 import {musicUrlAction} from './musicUrlAction'
 import {musicLyricAction} from './musicLyricAction'
-import {musicCommentAction} from './musicCommentAction' 
+import {musicCommentAction} from './musicCommentAction'
+import {showMenuAction} from './showMenuAction'
 export default{
     searchAction,
     loginEmailAction,
@@ -16,5 +17,6 @@ export default{
     musicLyricAction,
     musicUrlAction,
     musicInfoAction,
-    musicCommentAction
+    musicCommentAction,
+    showMenuAction
 }

@@ -1,0 +1,16 @@
+@import "component/_theme.scss";
+.vedio-player{
+    padding:15px;
+    video{
+        width:640px;
+        height:360px;
+        background: #000;
+    }
+    -webkit-media-controls-fullscreen-button{
+        background: #000;
+    }
+    .title{
+        font-size:20px;
+        line-height: 30px;
+    }
+}

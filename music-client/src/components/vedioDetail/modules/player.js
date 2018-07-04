@@ -1,5 +1,4 @@
 import React from 'react'
-import vedio from '../../vedio';
  class Player extends React.Component{
     render(){
         let {url,detail}=this.props

@@ -40,7 +40,7 @@ class App extends Component {
                         searchHandler={this.searchHandler} 
                         userInfoClick={this.userInfoClick}/>
                     <Menu login={props.public.login} show={props.public.showMenu}/>
-                    <div className="app-main" style={{width:props.public.showMenu?800:"auto"}}>
+                    <div className="app-main" style={{width:props.public.showMenu?800:"100%"}}>
                         {renderRoutes(props.route.routes)}
                     </div>
                     <Player

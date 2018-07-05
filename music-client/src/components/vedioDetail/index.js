@@ -35,6 +35,7 @@ import './index.scss'
         let {props,state}=this
         return <div className="vedio-detail">
                     <div className="main">
+                        <div className="left">
                         <Player url={props.vedioPlay.vedioUrl} detail={props.vedioPlay.vedioDetail}/>
                         <LoadingInfo status={props.vedioPlay.vedioComment.status} component={
                             <Comment 
@@ -42,7 +43,9 @@ import './index.scss'
                                 getComment={this.getCommentPage}
                                 current={state.current} />}
                             />
-        
+                        </div>
+                        <div className="right">
+                        </div>
                         
                     </div>
                     <div className="aside"></div>

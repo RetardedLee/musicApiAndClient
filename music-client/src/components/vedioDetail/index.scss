@@ -14,9 +14,11 @@ video::-internal-media-controls-overlay-play-button-interna{
     display: none;
 }
 .vedio-detail{
-/* autoprefixer: on */
-.vedio-player{
-    padding:15px;
+    .title{
+        line-height:30px;
+        font-size: 20px;
+    
+    }
     .rc-pagination-item-active{
         background-color:transparent;
         border-color:transparent;
@@ -39,18 +41,7 @@ video::-internal-media-controls-overlay-play-button-interna{
     .rc-pagination {
         text-align: right;
     }
-    .title{
-        width:860px;
-        margin-left:60px;
-        margin-top:40px;
-        height:33px;
-        font-size:20px;
-        border-bottom: 2px solid #c20c0c;
-        .sub{
-            color:#666;
-            font-size: 14px;
-        }
-    }
+    
     .sub-title{
         height: 25px;
         border-bottom: 1px solid #e1e1e2;
@@ -60,8 +51,9 @@ video::-internal-media-controls-overlay-play-button-interna{
         margin-bottom:15px;
     }
     .comment-list{
-
+        padding:15px;
         overflow: hidden;
+        width:670px;
         .comment-item{
            
             line-height: 1.4;
@@ -108,6 +100,10 @@ video::-internal-media-controls-overlay-play-button-interna{
         background: #000;
        
     }
+/* autoprefixer: on */
+.vedio-player{
+    padding:15px;
+ 
    
     
       

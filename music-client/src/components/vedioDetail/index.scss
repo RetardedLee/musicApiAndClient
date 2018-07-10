@@ -14,9 +14,89 @@ video::-internal-media-controls-overlay-play-button-interna{
     display: none;
 }
 .vedio-detail{
+    @include flexBox($wrap:nowrap,$align:flex-start);
+    .main{
+        width:640px;
+       
+    }
+    .aside{
+        width:350px;
+        margin-top:40px;
+        h2{
+            font-size: 16px;
+            color:#333;
+            border-bottom:1px solid #e5e5e5;
+            line-height: 25px;
+            margin-bottom:15px;
+            &:last-of-type{
+                margin-top:20px;
+            }
+        }
+        h3{
+            color:#888;
+            font-size: 12px;
+            i{
+                font-style: normal;
+            
+            }
+        }
+        .desc {
+            
+            p{
+              &:first-child{
+                  margin-top:15px;
+                  margin-bottom:15px;
+              }  
+                line-height: 20px;
+                margin-top:5px;
+            }
+        }
+        .relative-list{
+            li{
+                .relative{
+                    position: relative;
+                    width:40%;
+                    img{
+                        width:100%;
+                        display: block;
+                    }
+                    .count{
+                        position: absolute;
+                        top:0;
+                        width:100%;
+                        color:#fff;
+                        text-align: right;
+                        background: rgba(0,0,0,.3);
+                        line-height: 20px;
+                        padding-right: 10px;
+                        font-size: 12px;
+                    }
+                }
+                .right{
+                    width:60%;
+                    padding:10px;
+                    .link-name{
+                        @include text-overflow-ellipsis($line:2);
+                        color:#333;
+                    }
+                    .duration{
+                        margin-top:5px;
+                    }
+                    .link-user{
+                        display: block;
+                        margin-top:10px;
+                    }
+                }
+                @include flexBox($wrap:nowrap,$align:flex-start);
+                margin-top:10px;
+               
+            }
+        }
+    }
     .title{
         line-height:30px;
         font-size: 20px;
+        @include text-overflow-ellipsis($line:1);
     
     }
     .rc-pagination-item-active{
@@ -53,7 +133,6 @@ video::-internal-media-controls-overlay-play-button-interna{
     .comment-list{
         padding:15px;
         overflow: hidden;
-        width:670px;
         .comment-item{
            
             line-height: 1.4;
@@ -95,7 +174,7 @@ video::-internal-media-controls-overlay-play-button-interna{
         }
     }
     video{
-        width:640px;
+        width:600px;
         height:360px;
         background: #000;
        
@@ -103,7 +182,7 @@ video::-internal-media-controls-overlay-play-button-interna{
 /* autoprefixer: on */
 .vedio-player{
     padding:15px;
- 
+    width:640px;
    
     
       

@@ -12,6 +12,10 @@ export default{
         musicInfo:`${DOMAIN}/music/detail`,
         musicComment:`${DOMAIN}/music/comment`
     },
+    user:{
+        userSurvery:`${DOMAIN}/user/detail`,
+        userPlaylist:`${DOMAIN}/user/playlist`
+    },
     music:{
         recommend:{
             banner:`${DOMAIN}/banner`,

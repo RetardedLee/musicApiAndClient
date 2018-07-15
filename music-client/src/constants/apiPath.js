@@ -48,6 +48,12 @@ export default{
         vedioUrl:`${DOMAIN}/vedio/url`,
         vedioRelative:`${DOMAIN}/mv/relative`
     },
+    mv:{
+        mvComment:`${DOMAIN}/mv/comment`,
+        mvDetail:`${DOMAIN}/mv/detail`,
+        mvUrl:`${DOMAIN}/mv/url`,
+        mvRelative:`${DOMAIN}/mv/relative`
+    },
     playList:{
         playListDetail:`${DOMAIN}/playlist/detail`,
         playListComment:`${DOMAIN}/playlist/comment`

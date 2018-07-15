@@ -9,6 +9,7 @@ import Artist from './artist'
 import Album from './album'
 import User from './user'
 import VedioPlayer from './vedioPlayer'
+import MvPlayer from './mvPlayer'
 let AppContainer=createContainer(App,"public",actions)
 let routes=[
     {
@@ -42,7 +43,12 @@ let routes=[
             {
                 path:"/vedio/:id",
                 component:VedioPlayer
+            },
+            {
+                path:"/mv/:id",
+                component:MvPlayer
             }
+            
         ]
     }
 ]

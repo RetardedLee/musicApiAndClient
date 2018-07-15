@@ -197,5 +197,23 @@ export default{
             content:null,
             status:0
         }
+    },
+    mvPlay:{
+        mvDetail:{
+            content:null,
+            status:0
+        },
+        mvComment:{
+            content:null,
+            status:0
+        },
+        mvRelative:{
+            content:null,
+            status:0
+        },
+        mvUrl:{
+            content:null,
+            status:0
+        }
     }
 }

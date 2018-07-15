@@ -134,7 +134,9 @@ module.exports = {
     // 相关推荐mv
     relativeMv:"/weapi/cloudvideo/v1/allvideo/rcmd",
     vedioDetail:"/weapi/cloudvideo/v1/video/detail",
-    vedioUrl:"/weapi/cloudvideo/playurl"
+    vedioUrl:"/weapi/cloudvideo/playurl",
+    mvUrl:"/weapi/song/enhance/play/mv/url",
+    mvDetail:"/weapi/v1/mv/detail"
     
 }
 

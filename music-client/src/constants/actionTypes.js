@@ -45,6 +45,12 @@ export default {
         VEDIO_URL:"VEDIO_URL",
         VEDIO_RELATIVE:"VEDIO_RELATIVE"
     },
+    mv:{
+        MV_DETAIL:"MV_DETAIL",
+        MV_COMMENT:"MV_COMMENT",
+        MV_URL:"MV_URL",
+        MV_RELATIVE:"MV_RELATIVE"
+    },
     playList:{
         PLAYLIST_DETAIL:"PLAYLIST_DETAIL",
         PLAYLIST_COMMENT:"PLAYLIST_COMMENT"

@@ -14,9 +14,7 @@ export default class VedioList extends React.Component{
     }
     render(){
         let{data}=this.props
-        console.log(data)
         return <ul className="vedio-list rec-list">{data.map((value,index)=>{
-            console.log(value)
             return <li className="rec-item" key={value.data.vid+Math.random()}>
             <Link to={`/vedio/${value.data.vid}`} className="block">
                 <p className="relative" onMouseEnter={this.mouseEnter.bind(this,value.data)} onMouseLeave={this.moustLeave.bind(this,value.data)}><img src={`${value.data.coverUrl}?param=230y130`} onError={(e)=>{e.target.src=defaultImg}}/>

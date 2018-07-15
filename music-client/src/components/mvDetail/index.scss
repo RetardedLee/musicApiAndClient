@@ -1,0 +1,191 @@
+@import "component/_theme.scss";
+/* autoprefixer: off */
+.state-playing input[pseudo="-webkit-media-controls-play-button" i], .state-playing input[pseudo="-webkit-media-controls-overlay-play-button" i]::-internal-media-controls-overlay-play-button-internal{
+    width:10px;
+    height:10px;
+}
+div[pseudo="-internal-media-controls-overlay-play-button-internal"]{
+    width:50px;
+}
+input[pseudo="-webkit-media-controls-overlay-play-button" i]::-internal-media-controls-overlay-play-button-interna{
+    width:50px;
+}
+video::-internal-media-controls-overlay-play-button-interna{
+    display: none;
+}
+.vedio-detail{
+    @include flexBox($wrap:nowrap,$align:flex-start);
+    .main{
+        width:640px;
+       
+    }
+    .aside{
+        width:350px;
+        margin-top:40px;
+        h2{
+            font-size: 16px;
+            color:#333;
+            border-bottom:1px solid #e5e5e5;
+            line-height: 25px;
+            margin-bottom:15px;
+            &:last-of-type{
+                margin-top:20px;
+            }
+        }
+        h3{
+            color:#888;
+            font-size: 12px;
+            i{
+                font-style: normal;
+            
+            }
+        }
+        .desc {
+            
+            p{
+              &:first-child{
+                  margin-top:15px;
+                  margin-bottom:15px;
+              }  
+                line-height: 20px;
+                margin-top:5px;
+            }
+        }
+        .relative-list{
+            li{
+                .relative{
+                    position: relative;
+                    width:40%;
+                    img{
+                        width:100%;
+                        display: block;
+                    }
+                    .count{
+                        position: absolute;
+                        top:0;
+                        width:100%;
+                        color:#fff;
+                        text-align: right;
+                        background: rgba(0,0,0,.3);
+                        line-height: 20px;
+                        padding-right: 10px;
+                        font-size: 12px;
+                    }
+                }
+                .right{
+                    width:60%;
+                    padding:10px;
+                    .link-name{
+                        @include text-overflow-ellipsis($line:2);
+                        color:#333;
+                    }
+                    .duration{
+                        margin-top:5px;
+                    }
+                    .link-user{
+                        display: block;
+                        margin-top:10px;
+                    }
+                }
+                @include flexBox($wrap:nowrap,$align:flex-start);
+                margin-top:10px;
+               
+            }
+        }
+    }
+    .title{
+        line-height:30px;
+        font-size: 20px;
+        @include text-overflow-ellipsis($line:1);
+    
+    }
+    .rc-pagination-item-active{
+        background-color:transparent;
+        border-color:transparent;
+        
+    }
+ .rc-pagination-item-active a{
+        color:#c20c0c;
+    }
+    .rc-pagination-item:hover{
+        border-color:transparent;
+        background: none;
+    }
+    .rc-pagination-item:hover{
+        border: 1px solid #d9d9d9;
+        background-color: #fff;
+    }
+    .rc-pagination-item-active:hover a{
+        color:#fff;
+    }
+    .rc-pagination {
+        text-align: right;
+    }
+    
+    .sub-title{
+        height: 25px;
+        border-bottom: 1px solid #e1e1e2;
+        color:#000;
+        font-size: 14px;
+        margin-top:15px;
+        margin-bottom:15px;
+    }
+    .comment-list{
+        padding:15px;
+        overflow: hidden;
+        .comment-item{
+           
+            line-height: 1.4;
+            padding:10px 0;
+            @include flexBox($justify:flex-start,$align:flex-start);
+            border-bottom:1px solid #e1e1e2;
+            img{
+                border-radius: 50%;
+            }
+            .user-link{
+                color:rgb(10,99,168);
+            }
+            .detail{
+                width:815px;
+                .con{
+                    img{
+                        vertical-align: middle;
+                    }
+                }
+                margin-left:10px;
+                font-size:12px;
+                margin-top:0;
+                P:last-child{
+                    margin-top:5px;
+                    color:#999;
+                    width:100%;
+                }
+                .pub-time{
+                    width:500px;
+                    @include flexBox($justify:space-between);
+                }
+                .rep{
+                    background: rgb(241,241,241);
+                    line-height: 1.4;
+                    margin-top: 10px;
+                    padding:10px;
+                }
+            }
+        }
+    }
+    video{
+        width:600px;
+        height:360px;
+        background: #000;
+       
+    }
+/* autoprefixer: on */
+.vedio-player{
+    padding:15px;
+    width:640px;
+   
+    
+      
+ 
+}
+}

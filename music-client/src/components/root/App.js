@@ -7,12 +7,7 @@ import Player from './modules/player/player';
 import './App.scss';
 class App extends Component {
     componentDidMount(){
-        this.props.userInfoAction().then((response)=>{
-            if(response.code===200 && response.userInfo != null){
-                let uid=response.payload.content.userId
-                this.props.playListAction(uid)
-            }
-        })
+        this.props.loginRefreshAction()
     }
     commentPageChange=(e)=>{
 
@@ -21,6 +16,7 @@ class App extends Component {
         this.props.searchAction(keywords)
     }
     userInfoClick=()=>{
+        console.log("登录框")
     }
     playMusic=(id)=>{
         this.props.musicUrlAction({id})
@@ -46,7 +42,7 @@ class App extends Component {
                 <div className = "music-app">
                     <Header 
                         searchSuggest={props.public.searchSuggest} 
-                        login={props.public.login} 
+                        userInfo={props.public.userInfo} 
                         searchHandler={this.searchHandler} 
                         userInfoClick={this.userInfoClick}
                         navPrev={this.navPrev}
@@ -54,7 +50,7 @@ class App extends Component {
                         prevEnable={ index !== 0 }
                         nextEnable={index !== length-1}
                         />
-                    <Menu login={props.public.login} show={props.public.showMenu}/>
+                    <Menu login={props.public.userInfo} show={props.public.showMenu}/>
                     <div className="app-main" style={{width:props.public.showMenu?800:"100%"}}>
                         {renderRoutes(props.route.routes)}
                     </div>

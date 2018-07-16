@@ -43,7 +43,7 @@ export default class Header extends React.Component{
                     <input placeholder="搜索音乐，视频，歌手，歌单" onChange={this.search} onFocus={this.inputFoucus}/><i className="iconfont icon-search"></i>
                     <SearchList data={props.searchSuggest}/>
                 </span>
-                <UserInfo data={props.login} onAvaClick={this.userInfoClick}/>
+                <UserInfo data={props.userInfo} onAvaClick={this.userInfoClick}/>
         </div>)
     }
 }

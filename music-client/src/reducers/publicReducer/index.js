@@ -7,6 +7,7 @@ import musicUrl from './musicUrlReducer'
 import musicLyric from './musicLyricReducer'
 import musicComment from './musicCommentReducer'
 import showMenu from './showMenuReducer'
+import userInfo from './userInfoReducer'
 export default combineReducers({
     searchSuggest,
     login,
@@ -15,5 +16,6 @@ export default combineReducers({
     musicLyric,
     musicUrl,
     musicComment,
-    showMenu
+    showMenu,
+    userInfo
 })

@@ -1,4 +1,23 @@
-import types from 'constants/actionTypes'
+
 import path from 'constants/apiPath'
-import fetchData from 'utils/fetchData'
-export const playListAction=(data)=>fetchData(types.public.PLAYLIST,path.public.playlist,data,"playlist")
+import {userInfoAction} from './userInfoAction' 
+export const loginRefreshAction=(data)=>dispatch=>fetch(path.public.loginRefresh, {
+                    credentials: 'include',
+                    method: "GET",
+                    cache: "no-cache",
+                    mode: "cors"
+                })
+                .then((response)=>response.json())
+                .then((json)=>{
+                    if(json.code === 301){
+                        dispatch({
+                        type:'USERINFO',
+                        payload:{
+                            status:-1,
+                            content:null
+                        }
+                    })
+                    }else{
+                        userInfoAction()
+                    }
+                })

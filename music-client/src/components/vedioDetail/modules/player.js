@@ -6,7 +6,7 @@ const URL =require("url-parse")
         let {url,detail,getRef}=this.props
        
         return <div className="vedio-player">
-                <h2 className="title"><span style={{marginRight:15}}>{"<"}</span>{detail.status===1?detail.content.name:null}</h2>
+                <h2 className="title">{detail.status===1?detail.content.title:null}</h2>
                     <video controls controlsList="nodownload" ref={getRef} autoPlay>
                     {url.status===1?url.content.map((v,k)=>{
                         var u=encodeURIComponent(v.url)

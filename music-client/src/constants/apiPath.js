@@ -6,11 +6,12 @@ export default{
         loginEmail:`${DOMAIN}/loginEmail`,
         loginMobi:`${DOMAIN}/loginMobi`,
         playlist:`${DOMAIN}/user/playlist`,
-        userInfo:`${DOMAIN}/banner`,
+        userInfo:`${DOMAIN}/user/info`,
         musicUrl:`${DOMAIN}/music/url`,
         musicLyric:`${DOMAIN}/music/lyric`,
         musicInfo:`${DOMAIN}/music/detail`,
-        musicComment:`${DOMAIN}/music/comment`
+        musicComment:`${DOMAIN}/music/comment`,
+        loginRefresh:`${DOMAIN}/login/refresh`
     },
     user:{
         userSurvery:`${DOMAIN}/user/detail`,

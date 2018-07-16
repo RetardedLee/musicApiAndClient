@@ -8,6 +8,7 @@ import {musicUrlAction} from './musicUrlAction'
 import {musicLyricAction} from './musicLyricAction'
 import {musicCommentAction} from './musicCommentAction'
 import {showMenuAction} from './showMenuAction'
+import {loginRefreshAction} from './loginRefreshAction'
 export default{
     searchAction,
     loginEmailAction,
@@ -18,5 +19,6 @@ export default{
     musicUrlAction,
     musicInfoAction,
     musicCommentAction,
-    showMenuAction
+    showMenuAction,
+    loginRefreshAction
 }

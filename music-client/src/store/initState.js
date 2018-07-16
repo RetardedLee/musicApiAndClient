@@ -30,6 +30,10 @@ export default{
             content:null,
             status:0
         },
+        userInfo:{
+            status:-1,
+            content:null
+        },
         showMenu:true
         
     },

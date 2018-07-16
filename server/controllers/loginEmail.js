@@ -4,9 +4,9 @@ const cloudPath = require("../cloudPath.js")
 const crypto = require("crypto");
 
 function loginEmail(req, res, next) {
-    const email = req.query.email
+    const email = req.body.email
     const md5sum = crypto.createHash("md5");
-    md5sum.update(req.query.password)
+    md5sum.update(req.body.password)
     const data = {
         email: email,
         password: md5sum.digest("hex"),

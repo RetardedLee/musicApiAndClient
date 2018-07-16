@@ -1,4 +1,96 @@
+@import "component/_theme.scss";
+.center{
+    @include flexBox();
+}
+.rc-dialog-close{
+    right:5px;
+    top:5px;
+}
+ .rc-dialog-body{
+     .icon{
+         text-align: center;
+         .iconfont{
+            font-size: 60px;
+            color:#f29c9f;
+         }
+         margin-bottom:20px;
+        
+     }
+     .log-ipt{
+         width:100%;
+         height:40px;
+         border:1px solid #ccc;
+         border-radius:3px;
+         padding-left:30px;
+         font-size:16px;
+         font-weight:700;
+         
+     }
+     .email,.cell{
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+     .pass{
+         border-top:none;
+         border-radius: 3px;
+         border-top-left-radius: 0;
+         border-top-right-radius: 0;
+     }
+     .log-btn{
+         margin-top:20px;
+        
+         button{
+            cursor: pointer;
+             width:100%;
+             height:40px;
+             border-radius: 5px;
+             outline: none;
+             border:none;
+             background: #c72e2e;
+             color:#fff;
+         }
+     }
+     input::-webkit-input-placeholder{
+         color:#ccc;
+         font-weight: normal;
+         line-height: 18px;
+     }
+     .relative{
+         position: relative;
+         .iconfont{
+             position: absolute;
+             left:7px;
+             top:13px;
+             color:#999;
+         }
+     }
+ }
+.login-choose{
+    width:170px;
+    background: #fff;
+    padding:30px 0 50px 0;
+    background-image: url("../../resource/logBg.png");
+    background-color:#fff; 
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.4);
 
+    li{
+        line-height: 30px;
+        margin-top:20px;
+        border-radius: 10px;
+        color:#ea4848;
+        border:1px solid;
+        text-align: center;
+        width:80%;
+        margin-right: auto;
+        margin-left:auto;
+        background: #fff;
+        cursor: pointer;
+        &:hover{
+            background: #f3b1b1;
+        }
+    }
+}
 .music-app{
     display: flex;
     flex-wrap: wrap;

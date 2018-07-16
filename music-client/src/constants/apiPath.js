@@ -3,8 +3,8 @@ export default{
     public:{
         searchSuggest:`${DOMAIN}/search/suggest`,
         search:`${DOMAIN}/search`,
-        loginEmail:`${DOMAIN}/loginEmail`,
-        loginMobi:`${DOMAIN}/loginMobi`,
+        loginEmail:`${DOMAIN}/login/email`,
+        loginMobi:`${DOMAIN}/login/mobi`,
         playlist:`${DOMAIN}/user/playlist`,
         userInfo:`${DOMAIN}/user/info`,
         musicUrl:`${DOMAIN}/music/url`,

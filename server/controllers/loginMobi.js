@@ -4,9 +4,9 @@ const cloudPath = require("../cloudPath.js")
 const crypto = require("crypto");
 
 function loginMobi(req, res, next) {
-    const phone = req.query.phone;
+    const phone = req.body.phone;
     const md5sum = crypto.createHash("md5");
-    md5sum.update(req.query.password);
+    md5sum.update(req.body.password);
     const data = {
         phone: phone,
         password: md5sum.digest("hex"),

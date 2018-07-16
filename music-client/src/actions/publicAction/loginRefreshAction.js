@@ -1,6 +1,7 @@
 
 import path from 'constants/apiPath'
-import {userInfoAction} from './userInfoAction' 
+import {userInfoAction} from './userInfoAction'
+console.log(userInfoAction) 
 export const loginRefreshAction=(data)=>dispatch=>fetch(path.public.loginRefresh, {
                     credentials: 'include',
                     method: "GET",
@@ -9,6 +10,7 @@ export const loginRefreshAction=(data)=>dispatch=>fetch(path.public.loginRefresh
                 })
                 .then((response)=>response.json())
                 .then((json)=>{
+                    console.log(json)
                     if(json.code === 301){
                         dispatch({
                         type:'USERINFO',
@@ -17,7 +19,7 @@ export const loginRefreshAction=(data)=>dispatch=>fetch(path.public.loginRefresh
                             content:null
                         }
                     })
-                    }else{
-                        userInfoAction()
+                    }else if(json.code === 200 ){
+                        return json
                     }
                 })

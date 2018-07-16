@@ -1,5 +1,6 @@
 import React from 'react'
 import './header.scss'
+
 import UserInfo from './userInfo'
 import SearchList from './searchList'
 
@@ -29,6 +30,9 @@ export default class Header extends React.Component{
     navNext=(e)=>{
         this.props.navNext()
     }
+    login=(t,u,p)=>{
+        this.props.login(t,u,p)
+    }
     render(){
         let {props}=this
         let {prevEnable,nextEnable}=props
@@ -43,7 +47,7 @@ export default class Header extends React.Component{
                     <input placeholder="搜索音乐，视频，歌手，歌单" onChange={this.search} onFocus={this.inputFoucus}/><i className="iconfont icon-search"></i>
                     <SearchList data={props.searchSuggest}/>
                 </span>
-                <UserInfo data={props.userInfo} onAvaClick={this.userInfoClick}/>
+                <UserInfo data={props.userInfo} onAvaClick={this.userInfoClick} login={this.login}/>
         </div>)
     }
 }

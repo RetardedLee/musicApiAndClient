@@ -1,12 +1,12 @@
 import React from 'react'
 import Loadable from 'react-loadable'
 const MvPlayLodable=Loadable({
-    loader:()=>import("component/vedioDetail"),
+    loader:()=>import("component/mvDetail"),
     loading:()=><span></span>
 })
-class VedioPlayer extends React.Component{
+class MvPlay extends React.Component{
     render(){
         return <MvPlayLodable />
     }
 }
-export default MvPlayLodable
+export default MvPlay

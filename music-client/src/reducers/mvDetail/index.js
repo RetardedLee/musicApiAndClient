@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
-import vedioDetail from './vedioDetailReducer'
-import vedioComment from './vedioCommentReducer'
-import vedioRelative from './vedioRelativeReducer'
-import vedioUrl from './vedioUrlReducer'
+import mvDetail from './mvDetailReducer'
+import mvComment from './mvCommentReducer'
+import mvRelative from './mvRelativeReducer'
+import mvUrl from './mvUrlReducer'
 export default combineReducers({
-    vedioDetail,
-    vedioComment,
-    vedioRelative,
-    vedioUrl
+    mvDetail,
+    mvComment,
+    mvRelative,
+    mvUrl
 })

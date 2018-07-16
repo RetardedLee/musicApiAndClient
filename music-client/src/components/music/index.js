@@ -13,9 +13,7 @@ import './index.scss'
 import createContainer from 'utils/createContainer'
 import actions from 'action/music'
  class Music extends React.Component{
-     constructor(props){
-        super(props)
-     }
+    
      componentDidMount(){
         //  组件加载完先发送第一个tab的action
          this.props.bannerAction()
@@ -23,6 +21,7 @@ import actions from 'action/music'
          this.props.recMvAction()
          this.props.excusiveAction()
          this.props.newTestAction()
+         this.props.showMenuAction(true)
         
      }
     tabChange=(e)=>{

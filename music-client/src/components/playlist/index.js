@@ -21,6 +21,7 @@ class Playlist extends React.Component{
         }
         this.id=props.match.params.id
         this.props.playListDetailAction({id:this.id})
+        this.props.showMenuAction(true)
         
     }
     getCommentPage=(e)=>{

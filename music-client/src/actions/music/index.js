@@ -12,6 +12,7 @@ import * as newAlbumAction from './newAlbumAction'
 import {musicInfoAction} from '../publicAction/musicInfoAction'
 import {musicUrlAction} from '../publicAction/musicUrlAction'
 import {musicLyricAction} from '../publicAction/musicLyricAction'
+import {showMenuAction} from 'action/publicAction/showMenuAction'
 export default{
     bannerAction,
     recListAction,
@@ -26,6 +27,7 @@ export default{
     ...newAlbumAction,
     musicInfoAction,
     musicLyricAction,
-    musicUrlAction
+    musicUrlAction,
+    showMenuAction
 
 }

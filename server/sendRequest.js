@@ -1,4 +1,4 @@
-const request = require("../../../AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/request");
+const request = require("request");
 const Encrypt = require("./crypto");
 const querystring = require("querystring");
 request.debug=true

@@ -3,7 +3,8 @@
 const express = require("express")
 const log4js = require('log4js');
 const app = express()
-const cors = require('cors'); 
+const cors = require('cors');
+const bodyParser = require('body-parser');
 const index = require("./controllers/index")
 const searchHandler = require("./controllers/search.js")
 const searchHot = require("./controllers/searchHot.js")
@@ -67,12 +68,19 @@ const playlistDetail=require("./controllers/playListDetail")
 const relativeMv =require("./controllers/relativeMv")
 const vedioDetail=require("./controllers/vedioDetail")
 const vedioUrl=require("./controllers/vedioUrl")
+const mvComment=require("./controllers/mvComment")
+const mvUrl=require("./controllers/mvUrl")
+const vedioPlay=require("./controllers/vedioPlay")
 log4js.configure({
     appenders: { out: { type: 'stdout', layout: { type: 'coloured' } } },
     categories: { default: { appenders: ['out'], level: 'info' } }
 });
 const logger = log4js.getLogger();
+
 app.use(log4js.connectLogger(logger, { level: log4js.levels.INFO }));
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 const options={
     origin: true,
     optionsSuccessStatus: 200,
@@ -81,6 +89,7 @@ const options={
     maxAge:-1
 }
 app.use(cors(options));
+
 app.get("/",index)
 app.get("/search",searchHandler);
 app.get("/search/multimatch",searchMulmatch);
@@ -141,6 +150,10 @@ app.get("/vedio/detail",vedioDetail)
 app.get("/playlist/detail",playlistDetail)
 app.get("/mv/relative",relativeMv)
 app.get("/vedio/url",vedioUrl)
+app.get("/mv/detail",mvDetali)
+app.get("/mv/comment",mvComment)
+app.get("/mv/url",mvUrl)
+app.get("/vedio/play",vedioPlay)
 var port = config.port || 3000
 app.listen(port, (server) => {
     console.info(`服务启动......端口：${port}  当前时间${new Date().toTimeString()}`)

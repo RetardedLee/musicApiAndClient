@@ -23,6 +23,7 @@ import ArtistAlbum from './modules/artistAlbum'
      componentDidMount(){
          this.props.artistSurveyAction({id:this.id})
          this.props.artistAlbumAction({id:this.id,limit:20})
+         this.props.showMenuAction(true)
      }
      tabChange=(e)=>{
          if(e==="mv"){

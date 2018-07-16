@@ -31,14 +31,14 @@ import './index.scss'
     }
     componentDidMount(){
         this.props.showMenuAction(false)
-        this.props.mvDetailAction({id:this.id})
+        this.props.mvDetailAction({mvid:this.id})
         this.props.mvCommentAction({id:this.id})
         this.props.mvRelativeAction({id:this.id,type:0})
         this.props.mvUrlAction({id:this.id,type:240})
     }
     getData=(e)=>{
         this.id=e
-        this.props.mvDetailAction({id:this.id})
+        this.props.mvDetailAction({mvid:this.id})
         
         this.props.mvCommentAction({id:this.id})
         this.props.mvRelativeAction({id:this.id,type:0})
@@ -51,10 +51,10 @@ import './index.scss'
         return <div className="vedio-detail">
                     <div className="main">
                         <div className="left">
-                        <Player url={props.vedioPlay.vedioUrl} detail={props.vedioPlay.vedioDetail} getRef={this.getRef} />
-                        <LoadingInfo status={props.vedioPlay.vedioComment.status} component={
+                        <Player url={props.mvPlay.mvUrl} detail={props.mvPlay.mvDetail} getRef={this.getRef} />
+                        <LoadingInfo status={props.mvPlay.mvComment.status} component={
                             <Comment 
-                                comment={props.vedioPlay.vedioComment.content}
+                                comment={props.mvPlay.mvComment.content}
                                 getComment={this.getCommentPage}
                                 current={state.current} />}
                             />
@@ -62,13 +62,13 @@ import './index.scss'
                     </div>
                     <div className="aside">
                     <LoadingInfo 
-                        status={props.vedioPlay.vedioDetail.status}
-                        component={<Detail data={props.vedioPlay.vedioDetail.content} />}
+                        status={props.mvPlay.mvDetail.status}
+                        component={<Detail data={props.mvPlay.mvDetail.content} />}
                         
                     />
                     <LoadingInfo 
-                        status={props.vedioPlay.vedioRelative.status}
-                        component={<Relative data={props.vedioPlay.vedioRelative.content} clickRelative={this.getData}/>}
+                        status={props.mvPlay.mvRelative.status}
+                        component={<Relative data={props.mvPlay.mvRelative.content} clickRelative={this.getData}/>}
                     />
                     </div>
 

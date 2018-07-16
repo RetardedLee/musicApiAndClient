@@ -15,6 +15,7 @@ import "./index.scss"
      componentDidMount(){
          this.props.userSurveryAction({id:this.id})
          this.props.userSubscribeAction({id:this.id})
+         this.props.showMenuAction(true)
      }
     render(){
        let {props,state}=this

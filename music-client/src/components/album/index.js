@@ -22,6 +22,7 @@ import CommentList from './modules/commentList'
     }
     componentDidMount(){
         this.props.albumDetailAction({id:this.id})
+        this.props.showMenuAction(true)
     }
     
     getCommentPage=(e)=>{

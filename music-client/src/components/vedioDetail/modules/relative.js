@@ -28,11 +28,13 @@ import formatSecond from 'utils/formatSeconds'
                         <div className="duration">
                             {formatSecond(v.durationms)}
                         </div>
+                        <div className="creator">
                         {
                             v.creator.map((v,k)=>{
                                 return <Link to={`/user/${v.userId}`} key={v.userId} className="link-user" >{v.userName}</Link>
                             })
                         }
+                        </div>
                     </div>
                     
                 </li>

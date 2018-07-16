@@ -85,6 +85,10 @@ video::-internal-media-controls-overlay-play-button-interna{
                     .link-user{
                         display: block;
                         margin-top:10px;
+                        margin-right:5px;
+                    }
+                    .creator{
+                        @include flexBox($align:flex-start,$wrap:wrap,$justify:flex-start);
                     }
                 }
                 @include flexBox($wrap:nowrap,$align:flex-start);

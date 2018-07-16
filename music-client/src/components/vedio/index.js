@@ -23,6 +23,7 @@ class Vedio extends React.Component{
     }
     componentDidMount(){
         this.getData("5100",0)
+        this.props.showMenuAction(true)
     }
     getData=(cat,page)=>{
         
@@ -62,6 +63,7 @@ class Vedio extends React.Component{
     }
     loadFunc=(e)=>{
         this.getData(this.state.cat,e)
+        
     }
     render(){
         let {state,props}=this

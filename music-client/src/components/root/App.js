@@ -9,7 +9,7 @@ class App extends Component {
     componentDidMount(){
         this.props.userInfoAction().then((response)=>{
             if(response.code===200 && response.userInfo != null){
-                 let uid=response.payload.content.userId
+                let uid=response.payload.content.userId
                 this.props.playListAction(uid)
             }
         })
@@ -30,15 +30,30 @@ class App extends Component {
     getComment=(id,offset,limit=20)=>{
         this.props.musicCommentAction({id,offset,limit})
     }
+    navPrev=(e)=>{
+        console.log(this.props.history.index)
+        this.props.history.goBack()    
+    
+    }
+    navNext=(e)=>{
+        console.log(this.props.history.index)
+        this.props.history.goForward()
+    }
     render() {
-        let {props,state}=this
+        let {props}=this
+        let {index,length}=props.history
         return (
                 <div className = "music-app">
                     <Header 
                         searchSuggest={props.public.searchSuggest} 
                         login={props.public.login} 
                         searchHandler={this.searchHandler} 
-                        userInfoClick={this.userInfoClick}/>
+                        userInfoClick={this.userInfoClick}
+                        navPrev={this.navPrev}
+                        navNext={this.navNext}
+                        prevEnable={ index !== 0 }
+                        nextEnable={index !== length-1}
+                        />
                     <Menu login={props.public.login} show={props.public.showMenu}/>
                     <div className="app-main" style={{width:props.public.showMenu?800:"100%"}}>
                         {renderRoutes(props.route.routes)}

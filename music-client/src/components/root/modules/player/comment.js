@@ -28,7 +28,6 @@ export default class Comment extends React.Component{
         if(props.comment !== null){
             comment=props.comment.comments
             hotComment=props.comment.hotComments
-            console.log(hotComment)
         }
         return <ul className="comment-list">
              {hotComment.length >0 ?<li className="sub-title">精彩评论</li>:null}

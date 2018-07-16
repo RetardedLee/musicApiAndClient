@@ -71,6 +71,7 @@ const vedioUrl=require("./controllers/vedioUrl")
 const mvComment=require("./controllers/mvComment")
 const mvUrl=require("./controllers/mvUrl")
 const vedioPlay=require("./controllers/vedioPlay")
+const loginRefresh=require("./controllers/loginRefresh")
 log4js.configure({
     appenders: { out: { type: 'stdout', layout: { type: 'coloured' } } },
     categories: { default: { appenders: ['out'], level: 'info' } }
@@ -154,6 +155,7 @@ app.get("/mv/detail",mvDetali)
 app.get("/mv/comment",mvComment)
 app.get("/mv/url",mvUrl)
 app.get("/vedio/play",vedioPlay)
+app.get("/login/refresh",loginRefresh)
 var port = config.port || 3000
 app.listen(port, (server) => {
     console.info(`服务启动......端口：${port}  当前时间${new Date().toTimeString()}`)

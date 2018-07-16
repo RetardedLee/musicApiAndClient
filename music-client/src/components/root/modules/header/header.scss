@@ -14,9 +14,30 @@
     .app-name{
         font-weight:700;
     }
+    .nav-bar{
+        display: inline-block;
+        width:60px;
+        margin:0 15px;
+        text-align:center;
+        border:1px solid #a82828;
+        border-radius: 3px;
+        .btn{
+            display: inline-block;
+            width:25px;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+            &:last-child{
+                border-left:1px solid #a82828;
+            }
+            &.disable{
+                color:#d15858;
+            }
+        }
+        
+    }
     .seach-bar{
         position:relative;
-        margin-left:100px;
         input{
             background:#a82828;
             color:#fdf9f9;

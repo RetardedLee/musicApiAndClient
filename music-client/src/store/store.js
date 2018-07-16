@@ -10,6 +10,7 @@ import albumReducer from 'reducer/album'
 import userReducer from 'reducer/user'
 import vedioDetailReducer from 'reducer/vedioDetail'
 import mvReducer from 'reducer/mvDetail'
+
 const middlewares = [thunk];
 
 if (process.env.NODE_ENV === `development`) {

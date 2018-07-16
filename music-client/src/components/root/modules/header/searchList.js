@@ -12,9 +12,8 @@ export default class SearchList extends React.Component{
     }
     render(){
         let {data}=this.props
-
         let searchDom=null
-        if(data.status==1){
+        if(data.status===1){
             searchDom=data.content.order.map((v,i)=>{
                 let title=""
                 let icon=""
@@ -29,7 +28,7 @@ export default class SearchList extends React.Component{
                     basePath="/album"
                 }else if(v==="playlists"){
                     title="歌单"
-                    icon="icon-gedan",
+                    icon="icon-gedan"
                     basePath="/playlist"
                 }else if(v==="artists"){
                     title="歌手"
@@ -39,7 +38,7 @@ export default class SearchList extends React.Component{
                 else{
                     title="视频"
                     icon="icon-ttpodicon"
-                    basePath="/video"
+                    basePath="/mv"
                 }
                 return <div className="item" key={v}>
                          <h3 className="left"><i className={`iconfont ${icon}`}></i><em className="f-fl">{title}</em></h3>

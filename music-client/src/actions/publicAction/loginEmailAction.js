@@ -27,4 +27,5 @@ export const loginEmailAction=(data)=>dispatch=>fetch(path.public.loginEmail, {
                         }
                     })
                     }
+                    return json
                 })

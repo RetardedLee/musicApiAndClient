@@ -18,8 +18,8 @@ export const loginRefreshAction=(data)=>dispatch=>fetch(path.public.loginRefresh
                             status:-1,
                             content:null
                         }
+                    
                     })
-                    }else if(json.code === 200 ){
-                        return json
                     }
+                    return json
                 })

@@ -1,7 +1,6 @@
 const request = require("request");
 const Encrypt = require("./crypto");
 const querystring = require("querystring");
-request.debug=true
 function sendRequest(path, data, requestByClient, responseByNode, succCallback, errorCallback) {
     const cookie = requestByClient.get('Cookie') ? requestByClient.get('Cookie') : ''
     const UA = requestByClient.get("User-Agent") || "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/13.10586"
@@ -40,8 +39,11 @@ function sendRequest(path, data, requestByClient, responseByNode, succCallback, 
             }
         } else {
             let cookie = res.headers["set-cookie"]
+            
+            console.log(cookie,"Set-Cookie",res.headers)
             if (Array.isArray(cookie)) {
-                cookie = cookie.map((v, i) => { var rt = v.replace(" Domain=.music.163.com", ""); return rt })
+                cookie = cookie.map((v, i) => { var rt = v.replace("Domain=.music.163.com", ""); return rt })
+                console.log(cookie)
                 responseByNode.setHeader("Set-Cookie", cookie)
             }
             // console.log(res)

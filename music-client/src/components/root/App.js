@@ -8,7 +8,7 @@ import './App.scss';
 class App extends Component {
     componentDidMount(){
         this.props.loginRefreshAction().then(res=>{
-            if(res===200){
+            if(res.code===200){
                 this.props.userInfoAction()
             }
         })
@@ -46,13 +46,21 @@ class App extends Component {
                 phone:u,
                 password:p
             }
-            this.props.loginMobiAction(data)
+            this.props.loginMobiAction(data).then((result)=>{
+                if(result.code===200){
+                    this.props.loginRefreshAction()
+                }
+            })
         }else{
             data={
                 email:u,
                 password:p
             }
-            this.props.loginEmailAction(data)
+            this.props.loginEmailAction(data).then((result)=>{
+                if(result.code===200){
+                    this.props.loginRefreshAction()
+                }
+            })
         }
 
     }

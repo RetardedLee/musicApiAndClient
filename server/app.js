@@ -79,7 +79,7 @@ log4js.configure({
 });
 const logger = log4js.getLogger();
 
-app.use(log4js.connectLogger(logger, { level: log4js.levels.INFO }));
+/* app.use(log4js.connectLogger(logger, { level: log4js.levels.INFO })); */
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())

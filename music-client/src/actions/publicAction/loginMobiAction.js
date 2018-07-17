@@ -11,7 +11,6 @@ export const loginMobiAction=(data)=>dispatch=>fetch(path.public.loginMobi, {
                 })
                 .then((response)=>response.json())
                 .then((json)=>{
-                    console.log(json)
                     if(json.code === 200){
                         dispatch({
                             type:types.public.LOGINMOBI,
@@ -29,4 +28,5 @@ export const loginMobiAction=(data)=>dispatch=>fetch(path.public.loginMobi, {
                         }
                     })
                     }
+                    return json
                 })
